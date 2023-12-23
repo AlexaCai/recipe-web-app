@@ -58,12 +58,6 @@
     font-weight: bold;
 }
 
-.image-background {
-    background: url("../../accounts/img/landing-pages-background.jpg") center/cover no-repeat;
-    height: 145vh;
-    margin: 0;
-}
-
 .action-boxes {
     display: flex;
     flex-direction: column;
@@ -76,7 +70,7 @@
     text-align: center;
     position: relative;
     padding: 20px;
-    background-color: rgb(255, 255, 255, 0.80);
+    background-color: rgb(255, 255, 255, 0.90);
     border-radius: 10px;
     align-self: flex-start; 
     margin-top: 40px;
@@ -118,16 +112,6 @@
     }
 }
 
-.error-message {
-    padding-left: unset
-}
-
-/* CSS for login page precisely */
-
-.login-form {
-    margin-bottom: 20px;
-}
-
 .custom-alert-top-one {
     border: solid 1px #d32417;
     background-color: #f1aeb5;
@@ -145,6 +129,28 @@
     font-size: 12px;
 }
 
+.error-message {
+    padding-left: unset
+}
+
+/* CSS for login page precisely */
+
+.image-background {
+    background: url("../../accounts/img/login-background.jpg") center/cover no-repeat;
+    height: 165vh;
+    margin: 0;
+}
+
+@media (max-width: 350px) {
+    .image-background {
+        height: 285vh;
+    }
+}
+
+.login-form {
+    margin-bottom: 20px;
+}
+
 .signup-link {
     color: black;
     font-size: 12px;
@@ -157,27 +163,26 @@
     font-weight: bold;
 }
 
+.login-button {
+    margin-bottom: 20px;
+}
+
 /* CSS for signup page precisely */
 
 .signup-page-image-background {
-    background: url("../../accounts/img/landing-pages-background.jpg") center/cover no-repeat;
-    height: 145vh;
+    background: url("../../accounts/img/signup-background.jpg") center/cover no-repeat;
+    height: 165vh;
     margin: 0;
+}
+
+@media (max-width: 500px) {
+    .signup-page-image-background {
+        height: 375vh;
+    }
 }
 
 .signup-form {
     margin-bottom: 20px;
-}
-
-.custom-alert-top-one {
-    border: solid 1px #d32417;
-    background-color: #f1aeb5;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.error-text {
-    font-size: 12px;
 }
 
 /* CSS for the forgot password pages precisely */
@@ -185,63 +190,6 @@
 .reset-password-form {
     margin-bottom: 20px;
 }
-
-.reset-password-page1-white-background-bottom-padding {
-    padding-bottom: 161px;
-}
-
-@media (max-width: 310px) {
-    .reset-password-page1-white-background-bottom-padding {
-        padding-bottom: 20px;
-    }
-}
-
-.reset-password-email-confirmation-sent-message {
-    padding-bottom: 35px;
-}
-
-@media (max-width: 300px) {
-    .reset-password-email-confirmation-sent-message {
-        font-size: 16px;
-    }
-}
-
-.reset-password-page2-white-background-bottom-padding {
-    padding-bottom: 249px;
-}
-
-@media (max-width: 400px) {
-    .reset-password-page2-white-background-bottom-padding {
-        padding-bottom: 200px;
-    }
-}
-
-@media (max-width: 310px) {
-    .reset-password-page2-white-background-bottom-padding {
-        padding-bottom: 150px;
-    }
-}
-
-@media (max-width: 285px) {
-    .reset-password-page2-white-background-bottom-padding {
-        padding-bottom: 30px;
-    }
-}
-
-.reset-password-page3-white-background-bottom-padding {
-    padding-bottom: 238px;
-}
-
-@media (max-width: 285px) {
-    .reset-password-page3-white-background-bottom-padding {
-        padding-bottom: 110px;
-    }
-}
-
-.reset-password-page4-white-background-bottom-padding {
-    padding-bottom: 263px;
-}
-
 
 /* CSS for logout page precisely */
 
@@ -257,7 +205,7 @@
     text-align: center;
     position: relative;
     padding: 20px;
-    background-color: rgb(255, 255, 255, 0.80);
+    background-color: rgb(255, 255, 255, 0.90);
     border-radius: 10px;
 }
 
@@ -279,7 +227,7 @@
     text-align: center;
     position: relative;
     padding: 20px;
-    background-color: rgb(255, 255, 255, 0.80);
+    background-color: rgb(255, 255, 255, 0.90);
     border-radius: 10px;
 }
 

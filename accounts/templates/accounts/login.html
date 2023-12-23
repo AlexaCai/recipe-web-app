@@ -62,7 +62,7 @@
                                     <strong>Error(s):</strong>
                                     <ul class="error-message">
                                         {% for error in form.non_field_errors %}
-                                        <p class="error-text">{{ error }}</p>
+                                        <span class="error-text">{{ error }}</span>
                                         {% endfor %}
                                     </ul>
                                 </div>
@@ -85,7 +85,7 @@
                                             {% if form.username.errors %}
                                             <div class="custom-alert alert-danger">
                                                 {% for error in form.username.errors %}
-                                                <p>{{ error }}</p>
+                                                <span>{{ error }}</span>
                                                 {% endfor %}
                                             </div>
                                             {% endif %}
@@ -100,17 +100,16 @@
                                             {% if form.password.errors %}
                                             <div class="custom-alert alert-danger">
                                                 {% for error in form.password.errors %}
-                                                <p>{{ error }}</p>
+                                                <span>{{ error }}</span>
                                                 {% endfor %}
                                             </div>
                                             {% endif %}
                                         </div>
-                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-10">
+                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-10 login-button">
                                             <button type="submit" class="btn btn-dark btn-sm" id="login-button"
                                                 data-bs-dismiss="modal">Login</button>
                                         </div>
                                     </form>
-                                    <br>
                                     <a href="{% url 'accounts:signup' %}" class="signup-link">Sign up</a>
                                     <br>
                                     <a href="{% url 'accounts:password_reset' %}" class="forgot-password-link">Forgot password?</a>
