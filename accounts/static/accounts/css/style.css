@@ -191,6 +191,10 @@
     margin-bottom: 20px;
 }
 
+.submit-reset-password-button {
+    margin-bottom: 20px;
+}
+
 /* CSS for logout page precisely */
 
 .logout-page-action-boxes {
