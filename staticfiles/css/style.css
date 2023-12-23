@@ -103,6 +103,7 @@
 .website-subtitle {
     font-family: 'Cinzel', sans-serif;
     font-weight: 600;
+    color: green;
 }
 
 @media (max-width: 355px) {
