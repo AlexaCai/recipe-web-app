@@ -158,7 +158,7 @@ function displaySearchResults(data) {
             <br>
             <br>
             <div class="search-result-not-found">
-                <span>For recipes searched by name or ingredient name, make sure there's are not spelling mistake in your text.</span>
+                <span>For recipes searched by name or ingredient name, make sure there is no spelling mistake in your text.</span>
                 <br>
                 <br>
                 <span>***</span>
@@ -200,16 +200,17 @@ function displaySearchResults(data) {
         <br>
         <h1 class="recipes-continent-title-section">Search results</h1> 
         <div class="icon-legend">
-            <img src="../../../media/flag-icon.png" alt="flag-icon" style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
-            <span class="vertical-line">|</span>
-            <img src="../../../media/difficulty-icon.png" alt="level-icon" style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
-            <span class="vertical-line">|</span>
-            <img src="../../../media/category-icon.png" alt="category-icon" style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+        <img src="/static/recipes/img/flag-icon.png" alt="flag-icon" style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+        <span class="vertical-line">|</span>
+        <img src="/static/recipes/img/difficulty-icon.png" alt="level-icon" style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+        <span class="vertical-line">|</span>
+        <img src="/static/recipes/img/category-icon.png" alt="category-icon" style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
         </div> 
         <br>
         <br>
         <div class="search-result-not-found">
             <button type="button" class="btn btn-danger" onclick="clearSearch()">Clear search</button>
+            <br>
             <br>
         </div>
         `;
@@ -244,15 +245,15 @@ function displaySearchResults(data) {
                         </a>
                     </div>
                     <div class="recipe-card-quick-info">
-                        <img src="../../../media/flag-icon.png" class="card-icons" alt="flag-icon"><span>${recipe.recipe_origin_country}</span>
+                        <img src="/static/recipes/img/flag-icon.png" class="card-icons" alt="flag-icon"><span>${recipe.recipe_origin_country}</span>
                     </div>
                     <br>
                     <div class="recipe-card-quick-info">
-                        <img src="../../../media/difficulty-icon.png" class="card-icons" alt="difficulty-icon"><span>${recipe.recipe_difficulty}</span>
+                        <img src="/static/recipes/img/difficulty-icon.png" class="card-icons" alt="difficulty-icon"><span>${recipe.recipe_difficulty}</span>
                     </div>
                     <br>
                     <div class="recipe-card-quick-info">
-                        <img src="../../../media/category-icon.png" class="card-icons" alt="category-icon"><span>${recipe.recipe_category}</span>
+                        <img src="/static/recipes/img/difficulty-icon.png" class="card-icons" alt="category-icon"><span>${recipe.recipe_category}</span>
                     </div>
                 </div>
             </div>
@@ -299,7 +300,7 @@ function clearSearch() {
 
 
 
-// Logic for the 'show more' and 'reduce' buttons on the north america recipes section
+//***Logic for the 'show more' and 'reduce' buttons on the north america recipes section
 document.addEventListener("DOMContentLoaded", function () {
 
     var visibleCardCount = 7;
@@ -350,7 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Logic for the 'show more' and 'reduce' buttons on the central america recipes section
+//***Logic for the 'show more' and 'reduce' buttons on the central america recipes section
 document.addEventListener("DOMContentLoaded", function () {
 
     var visibleCardCount = 7;
@@ -400,7 +401,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Logic for the 'show more' and 'reduce' buttons on the south america recipes section
+//***Logic for the 'show more' and 'reduce' buttons on the south america recipes section
 document.addEventListener("DOMContentLoaded", function () {
 
     var visibleCardCount = 7;
@@ -450,7 +451,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Function for the 'show more' and 'reduce' buttons on the europe recipes section
+//***Function for the 'show more' and 'reduce' buttons on the europe recipes section
 document.addEventListener("DOMContentLoaded", function () {
 
     var visibleCardCount = 7;
@@ -500,7 +501,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Function for the 'show more' and 'reduce' buttons on the africa recipes section
+//***Function for the 'show more' and 'reduce' buttons on the africa recipes section
 document.addEventListener("DOMContentLoaded", function () {
 
     var visibleCardCount = 7;
@@ -550,7 +551,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Function for the 'show more' and 'reduce' buttons on the asia recipes section
+//***Function for the 'show more' and 'reduce' buttons on the asia recipes section
 document.addEventListener("DOMContentLoaded", function () {
 
     var visibleCardCount = 7;
@@ -600,7 +601,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Function for the 'show more' and 'reduce' buttons on the oceania recipes section
+//***Function for the 'show more' and 'reduce' buttons on the oceania recipes section
 document.addEventListener("DOMContentLoaded", function () {
 
     var visibleCardCount = 7;
@@ -650,7 +651,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Function for the 'show more' and 'reduce' buttons on the mixed / other recipes section
+//***Function for the 'show more' and 'reduce' buttons on the mixed / other recipes section
 document.addEventListener("DOMContentLoaded", function () {
 
     var visibleCardCount = 7;

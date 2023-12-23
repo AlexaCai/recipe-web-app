@@ -59,7 +59,7 @@
 }
 
 .image-background {
-    background: url("../../../media/landing-pages-background.jpg") center/cover no-repeat;
+    background: url("../../accounts/img/landing-pages-background.jpg") center/cover no-repeat;
     height: 125vh;
     margin: 0;
 }
@@ -127,10 +127,26 @@
     margin-bottom: 20px;
 }
 
+.login-page-white-background-bottom-padding {
+    padding-bottom: 120px;
+}
+
+.signup-link {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.forgot-password-link {
+    color:black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 /* CSS for signup page precisely */
 
 .signup-page-image-background {
-    background: url("../../../media/landing-pages-background.jpg") center/cover no-repeat;
+    background: url("../../accounts/img/landing-pages-background.jpg") center/cover no-repeat;
     height: 125vh;
     margin: 0;
 }
@@ -150,6 +166,69 @@
 .signup-form {
     margin-bottom: 20px;
 }
+
+/* CSS for the forgot password pages precisely */
+
+.reset-password-form {
+    margin-bottom: 20px;
+}
+
+.reset-password-page1-white-background-bottom-padding {
+    padding-bottom: 161px;
+}
+
+@media (max-width: 310px) {
+    .reset-password-page1-white-background-bottom-padding {
+        padding-bottom: 20px;
+    }
+}
+
+.reset-password-email-confirmation-sent-message {
+    padding-bottom: 35px;
+}
+
+@media (max-width: 300px) {
+    .reset-password-email-confirmation-sent-message {
+        font-size: 16px;
+    }
+}
+
+.reset-password-page2-white-background-bottom-padding {
+    padding-bottom: 249px;
+}
+
+@media (max-width: 400px) {
+    .reset-password-page2-white-background-bottom-padding {
+        padding-bottom: 200px;
+    }
+}
+
+@media (max-width: 310px) {
+    .reset-password-page2-white-background-bottom-padding {
+        padding-bottom: 150px;
+    }
+}
+
+@media (max-width: 285px) {
+    .reset-password-page2-white-background-bottom-padding {
+        padding-bottom: 30px;
+    }
+}
+
+.reset-password-page3-white-background-bottom-padding {
+    padding-bottom: 238px;
+}
+
+@media (max-width: 285px) {
+    .reset-password-page3-white-background-bottom-padding {
+        padding-bottom: 110px;
+    }
+}
+
+.reset-password-page4-white-background-bottom-padding {
+    padding-bottom: 263px;
+}
+
 
 /* CSS for logout page precisely */
 
@@ -198,7 +277,7 @@
 /* CSS for profile page precisely */
 
 .profile-page-image-background {
-    background: url("../../../media/profile-page-background.jpg") center/cover no-repeat;
+    background: url("../../accounts/img/profile-page-background.jpg") center/cover no-repeat;
     padding: 100px 0;
     height: 140vh;
 }
@@ -448,7 +527,7 @@
 }
 
 .footer-background {
-    background: url("../../../media/detailed-recipe-page-background1.jpg") center/cover no-repeat;
+    background: url("../../accounts/img/green-background.jpg") center/cover no-repeat;
 }
 
 .share-website-text {
