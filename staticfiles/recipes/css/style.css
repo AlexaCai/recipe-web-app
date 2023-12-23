@@ -60,7 +60,7 @@
 
 .image-background {
     background: url("../../recipes/img/landing-pages-background.jpg") center/cover no-repeat;
-    height: 145vh;
+    height: 165vh;
 }
 
 .welcome-boxes {
@@ -72,8 +72,9 @@
 .welcome-box-1 {
     text-align: center;
     padding: 20px;
-    background-color: rgb(255, 255, 255, 0.80);
+    background-color: rgb(255, 255, 255, 0.90);
     border-radius: 10px;
+    margin-top: 40px;
 }
 
 .website-title {
