@@ -199,7 +199,6 @@
 
 .logout-page-action-boxes {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center; 
     height: 90vh; 
@@ -213,18 +212,26 @@
     border-radius: 10px;
 }
 
-.logout-page-buttons-bottom-margin {
-    margin-bottom: 20px;
+@media (max-width: 575px) {
+    .logout-page-action-box-1 {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 575px) {
+    .logout-page-buttons-bottom-margin {
+        margin-bottom: 20px;
+    }
 }
 
 /* CSS for delete page precisely */
 
 .delete-account-page-action-boxes {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center; 
     height: 90vh; 
+    margin-top: 40px;
 }
 
 .delete-account-page-action-box-1 {
@@ -235,8 +242,10 @@
     border-radius: 10px;
 }
 
-.delete-page-buttons-bottom-margin {
-    margin-bottom: 20px;
+@media (max-width: 575px) {
+    .logout-page-buttons-bottom-margin {
+        margin-bottom: 20px;
+    }
 }
 
 /* CSS for profile page precisely */

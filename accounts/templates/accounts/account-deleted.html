@@ -55,22 +55,21 @@
                         <br>
                         <h2 class="page-main-message">Account deleted</h2>
                         <br>
-                        <h4>You’ve successfully deleted your account</h4>
-                        <br>
-                        <h4>Come back whenever in need of more amazing recipes!</h4> 
+                        <p>You’ve successfully deleted your account.</p>
+                        <p>Come back whenever in need of more <b>amazing recipes!</b></p> 
                         <br>
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1">                                    
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12 delete-page-buttons-bottom-margin">
-                                    <a class="btn btn-dark w-100" href="{% url 'recipes:home' %}">
+                                    <a class="btn btn-dark btn-sm w-100" href="{% url 'recipes:home' %}">
                                         Home
                                     </a>
                                 </div>
                                 <br>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12 delete-page-buttons-bottom-margin">
-                                    <a class="btn btn-dark w-100" href="{% url 'accounts:signup' %}">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12">
+                                    <a class="btn btn-dark btn-sm w-100" href="{% url 'accounts:signup' %}">
                                         Sign up
                                     </a>
                                 </div>     
