@@ -1,0 +1,582 @@
+/* CSS code shared for all accounts app templates */
+
+.header-display {
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 325px) {
+    .header-display {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 280px) {
+    .header-display {
+        font-size: 12px;
+    }
+}
+
+.logo-container {
+    position: absolute;
+    left: 1px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    .logo-image {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 325px) {
+    .logo-image {
+        height: 80%;
+    }
+}
+
+@media (max-width: 325px) {
+    .logo-image {
+        height: 70%;
+    }
+}
+
+.navbar-nav li.nav-item {
+    margin-left: auto;
+    padding-right: 8px;
+    font-weight: bold;
+}
+
+.image-background {
+    background: url("../../accounts/img/landing-pages-background.jpg") center/cover no-repeat;
+    height: 125vh;
+    margin: 0;
+}
+
+.action-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    margin-top: 30px;
+}
+
+.action-box-1 {
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    background-color: rgb(255, 255, 255, 0.80);
+    border-radius: 10px;
+    align-self: flex-start; 
+    margin-top: 40px;
+}
+
+.website-title {
+    font-family: 'Lobster', sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+@media (max-width: 405px) {
+    .website-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 300px) {
+    .website-title {
+        font-size: 30px;
+    }
+}
+
+.page-main-message {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+}
+
+@media (max-width: 355px) {
+    .page-main-message {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 300px) {
+    .page-main-message {
+        font-size: 20px;
+    }
+}
+
+.error-message {
+    padding-left: unset
+}
+
+/* CSS for login page precisely */
+
+.login-form {
+    margin-bottom: 20px;
+}
+
+.login-page-white-background-bottom-padding {
+    padding-bottom: 120px;
+}
+
+.signup-link {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.forgot-password-link {
+    color:black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* CSS for signup page precisely */
+
+.signup-page-image-background {
+    background: url("../../accounts/img/landing-pages-background.jpg") center/cover no-repeat;
+    height: 125vh;
+    margin: 0;
+}
+
+@media (max-width: 1120px) {
+    .signup-page-image-background {
+        height: 135vh;
+    }
+}
+
+@media (max-width: 325px) {
+    .signup-page-image-background {
+        height: 140vh;
+    }
+}
+
+.signup-form {
+    margin-bottom: 20px;
+}
+
+/* CSS for the forgot password pages precisely */
+
+.reset-password-form {
+    margin-bottom: 20px;
+}
+
+.reset-password-page1-white-background-bottom-padding {
+    padding-bottom: 161px;
+}
+
+@media (max-width: 310px) {
+    .reset-password-page1-white-background-bottom-padding {
+        padding-bottom: 20px;
+    }
+}
+
+.reset-password-email-confirmation-sent-message {
+    padding-bottom: 35px;
+}
+
+@media (max-width: 300px) {
+    .reset-password-email-confirmation-sent-message {
+        font-size: 16px;
+    }
+}
+
+.reset-password-page2-white-background-bottom-padding {
+    padding-bottom: 249px;
+}
+
+@media (max-width: 400px) {
+    .reset-password-page2-white-background-bottom-padding {
+        padding-bottom: 200px;
+    }
+}
+
+@media (max-width: 310px) {
+    .reset-password-page2-white-background-bottom-padding {
+        padding-bottom: 150px;
+    }
+}
+
+@media (max-width: 285px) {
+    .reset-password-page2-white-background-bottom-padding {
+        padding-bottom: 30px;
+    }
+}
+
+.reset-password-page3-white-background-bottom-padding {
+    padding-bottom: 238px;
+}
+
+@media (max-width: 285px) {
+    .reset-password-page3-white-background-bottom-padding {
+        padding-bottom: 110px;
+    }
+}
+
+.reset-password-page4-white-background-bottom-padding {
+    padding-bottom: 263px;
+}
+
+
+/* CSS for logout page precisely */
+
+.logout-page-action-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    height: 90vh; 
+}
+
+.logout-page-action-box-1 {
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    background-color: rgb(255, 255, 255, 0.80);
+    border-radius: 10px;
+}
+
+.logout-page-buttons-bottom-margin {
+    margin-bottom: 20px;
+}
+
+/* CSS for delete page precisely */
+
+.delete-account-page-action-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    height: 90vh; 
+}
+
+.delete-account-page-action-box-1 {
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    background-color: rgb(255, 255, 255, 0.80);
+    border-radius: 10px;
+}
+
+.delete-page-buttons-bottom-margin {
+    margin-bottom: 20px;
+}
+
+/* CSS for profile page precisely */
+
+.profile-page-image-background {
+    background: url("../../accounts/img/profile-page-background.jpg") center/cover no-repeat;
+    padding: 100px 0;
+    height: 140vh;
+}
+
+@media (max-width: 325px) {
+    .profile-page-image-background {
+        padding-top: 40px;
+    }
+}
+
+.intro-text {
+    font-family: 'Lobster', sans-serif;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+@media (max-width: 750px) {
+    .intro-text {
+        margin-bottom: 40px;
+    }
+}
+
+.profile-page-create-recipe-box {
+    background-color: rgba(250, 250, 250, 0.95);
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 60%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+@media (max-width: 500px) {
+    .profile-page-create-recipe-box {
+        max-width: 80%;
+    }
+}
+
+.profile-page-call-to-action {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 800;
+}
+
+.profile-page-title {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 800;
+}
+
+.icon-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3px;
+    font-size: 20px;
+}
+
+@media (max-width: 450px) {
+    .icon-legend {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 280px) {
+    .icon-legend {
+        font-size: 10px;
+    }
+}
+
+.icon-separator-vertical-line {
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+@media (max-width: 350px) {
+    .icon-separator-vertical-line {
+        margin: 0 8px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 280px) {
+    .icon-separator-vertical-line {
+        margin: 0 6px;
+        font-size: 20px;
+    }
+}
+
+.created-recipe-card-hidden {
+    display: none;
+}
+
+.favorite-recipe-card-hidden {
+    display: none;
+}
+
+.row.showMoreButtonRow {
+    --bs-gutter-x: 0;
+    margin-top: 40px;
+}
+
+.row.hideExtraCardsButtonRow {
+    --bs-gutter-x: 0;
+    margin-top: 40px;
+}
+
+.favorite-card-remove-button-margin {
+    margin-bottom: 20px;
+}
+
+.recipe-card-padding {
+    padding: 20px;
+    padding-bottom: 15px;
+}
+
+.card {
+    position: relative;
+}
+
+.card-text {
+    color: black;
+    position: absolute;
+    padding: 15px;
+}
+
+.card-title {
+    position: absolute;
+}
+
+.card-title-custom {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    background-color: rgb(255, 255, 255, 0.97);
+    padding: 10px 30px;
+    color: black;
+    border: solid 1px black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+}
+
+@media (max-width: 450px) {
+    .card-title-custom {
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 300px) {
+    .card-title-custom {
+        font-size: 16px;
+        padding: 4px 20px;
+    }
+}
+
+.recipe-card-quick-info {
+    background: rgba(255, 255, 255, 0.97);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: unset;
+    border: solid 1px black;
+    font-weight: bold;
+}
+
+@media (max-width: 450px) {
+    .recipe-card-quick-info {
+        font-size: 15px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 350px) {
+    .recipe-card-quick-info {
+        font-size: 14px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 350px) {
+    .recipe-card-quick-info {
+        font-size: 12px;
+        padding: 4px;
+    }
+}
+
+.card-icons {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+@media (max-width: 450px) {
+    .card-icons {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 350px) {
+    .card-icons {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+@media (max-width: 300px) {
+    .card-icons {
+        width: 14px;
+        height: 12px;
+    }
+}
+
+.recipes-list-page-add-to-favorite-button {
+    margin-top: 20px;
+}
+
+.profile-page-modal-head {
+    display: flex;
+    padding: 20px;
+    justify-content: flex-end;
+}
+
+.create-recipe-form-group-space {
+    margin-bottom: 20px;
+}
+
+.create-recipe-form-subtitle {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+}
+
+.create-recipe-form-directives {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.footer-padding {
+    margin-top: 40px;
+}
+
+.footer-background {
+    background: url("../../accounts/img/green-background.jpg") center/cover no-repeat;
+}
+
+.share-website-text {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: bold;
+}
+
+.website-share-icons {
+    border-radius: 4px;
+}
+
+.webpage-share-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.webpage-share-icons a {
+    margin: 0 5px;
+}
+
+@media (max-width: 350px) {
+    .webpage-share-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 350px) {
+    .webpage-share-icons a {
+        margin-top: 15px;
+    }
+}
+
+.back-to-top-link {
+    font-size: 20px;
+    color: black;
+}
+
+@media (max-width: 350px) {
+    .back-to-top-link {
+        font-size: 17px;
+    }
+}
+
+.back-to-top-link-bottom-margin {
+    margin-bottom: 50px;
+}
+
+.footer-buttons-action-call {
+    text-decoration: underline;
+}

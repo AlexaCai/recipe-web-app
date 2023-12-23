@@ -1,0 +1,211 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="{% static 'recipes/js/javascript.js' %}" defer></script>
+    <title>Cuisine atlas</title>
+    <link rel="shortcut icon" href="{% static 'recipes/img/website-logo.png' %}" type="image/x-icon">
+    <link rel="manifest" href="{% static 'recipes/manifest.json' %}">
+</head>
+
+<main>
+    <header>
+        <div class="header-display">
+            <nav class="navbar navbar-expand-md navbar-light justify-content-end">
+                <div class="logo-container">
+                    <img src="{% static 'recipes/img/website-logo.png' %}" alt="website-logo" class="logo-image">
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'recipes:home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'recipes:recipes_list_unsigned_users' %}">Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'recipes:about' %}">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+        <div class="image-background">
+            <div class="row welcome-boxes">
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
+                    <div class="welcome-box-1">
+                        <h1 class="website-title">A tablespoon of discovery</h1>
+                        <br>
+                        <h2 class="website-subtitle">Your atlas of the world cuisines</h2>
+                        <br>
+                        <div class="container">
+                            <div class="row">
+                                <div
+                                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 home-page-buttons-bottom-padding">
+                                    <a class="btn btn-dark w-100" href="{% url 'accounts:login' %}">
+                                        Log in
+                                    </a>
+                                </div>
+                                <div
+                                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 home-page-buttons-bottom-padding">
+                                    <a class="btn btn-dark w-100" href="{% url 'accounts:signup' %}">
+                                        Sign up
+                                    </a>
+                                </div>
+                                <div
+                                    class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 home-page-buttons-bottom-padding">
+                                    <a href="{% url 'recipes:recipes_list_unsigned_users' %}"
+                                        class="btn btn-dark w-100">See recipes</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="welcome-box-2">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-2 col-md-2 col-sm-2 col-12">
+                                    </div>
+                                    <div
+                                        class="col-xl-6 col-lg-8 col-md-8 col-sm-8 col-12 home-page-buttons-bottom-padding download-app-button-modal">
+                                        <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal"
+                                            data-bs-target="#downloadAppModal">
+                                            Download the app version
+                                        </button>
+                                        <div class="modal fade" id="downloadAppModal" tabindex="-1"
+                                            aria-labelledby="downloadAppModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="home-page-modal-head">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h4 class="modal-title-home-page">Download the app version</h4>
+                                                        <div class="row">
+                                                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                                            </div>
+                                                            <div
+                                                                class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 modal-text-home-page">
+                                                                <p>Want to access your favorite recipes even more
+                                                                    easily on your computer or mobile? Download the
+                                                                    Cuisine Atlas app version in two simple
+                                                                    steps.</p>
+                                                            </div>
+                                                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <h4 class="modal-title-home-page">Instructions</h4>
+                                                        <p class="modal-text-home-page"><b>Step 1-</b> Look inside the
+                                                            navigation bar of your browser at the far right, and click
+                                                            on the
+                                                            following icon:</p>
+                                                        <img src="{% static 'recipes/img/download-app-icon.png' %}"
+                                                            alt="download-app-icon" class="download-app-icon">
+                                                        <p class="modal-text-home-page"><b>Step 2-</b> In the pop-up that
+                                                            appears, click “install”</p>
+                                                        <p class="modal-text-home-page">Cuisine Atlas is now
+                                                            installed and you can access it simply by clicking on the
+                                                            icon on your mobile or desktop. If you want, you can also
+                                                            pin the app to your desktop taskbar or place it on your mobile home
+                                                            screen.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-dark"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-2 col-md-2 col-sm-2 col-12">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-3 col-12">
+                                    </div>
+                                    <div
+                                        class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 home-page-buttons-bottom-padding">
+                                        <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal"
+                                            data-bs-target="#signupquestionModal">
+                                            Why signing up?
+                                        </button>
+                                        <div class="modal fade" id="signupquestionModal" tabindex="-1"
+                                            aria-labelledby="signupquestionModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="home-page-modal-head">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h4 class="modal-title-home-page">Why signing up?</h4>
+                                                        <div class="row">
+                                                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                                            </div>
+                                                            <div
+                                                                class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 modal-text-home-page">
+                                                                <p>Signed up users can create their own list of recipes,
+                                                                    add
+                                                                    recipes
+                                                                    from our catalog to their list of favorites and
+                                                                    comment
+                                                                    on
+                                                                    recipes.</p>
+                                                            </div>
+                                                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-dark"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-3 col-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'recipes/js/javascript.js' %}"></script>
+</main>
+
+</html>

@@ -1,0 +1,1076 @@
+/* CSS code shared for all recipes app templates */
+
+.header-display {
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 325px) {
+    .header-display {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 280px) {
+    .header-display {
+        font-size: 12px;
+    }
+}
+
+.logo-container {
+    position: absolute;
+    left: 1px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    .logo-image {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 325px) {
+    .logo-image {
+        height: 80%;
+    }
+}
+
+@media (max-width: 325px) {
+    .logo-image {
+        height: 70%;
+    }
+}
+
+.navbar-nav li.nav-item {
+    margin-left: auto;
+    padding-right: 8px;
+    font-weight: bold;
+}
+
+
+
+
+
+/* CSS for the welcome page precisely */
+
+.image-background {
+    background: url("../../../media/landing-pages-background.jpg") center/cover no-repeat;
+    height: 125vh;
+}
+
+.welcome-boxes {
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.welcome-box-1 {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(255, 255, 255, 0.80);
+    border-radius: 10px;
+}
+
+.website-title {
+    font-family: 'Lobster', sans-serif;
+    font-size: 50px;
+}
+
+@media (max-width: 405px) {
+    .website-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 300px) {
+    .website-title {
+        font-size: 35px;
+    }
+}
+
+.website-subtitle {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+}
+
+@media (max-width: 355px) {
+    .website-subtitle {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 300px) {
+    .website-subtitle {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .home-page-buttons-bottom-padding {
+        padding-bottom: 10px;
+    }
+}
+
+.welcome-box-2 {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 50px;
+    border-top: 4px solid black;
+}
+
+.home-page-modal-head {
+    display: flex;
+    padding: 20px;
+    justify-content: flex-end;
+}
+
+.modal-title-home-page {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.modal-text-home-page {
+    font-size: 20px;
+}
+
+
+
+
+
+/* CSS for the recipes list page (unsigned and signed versions) */
+
+.recipe-page-intro-section {
+    background: url("../../../media/recipe-list-page-background.jpg") center/cover no-repeat;
+    text-align: center;
+    color: white;
+    padding: 100px 0;
+    height: 140vh;
+}
+
+@media (max-width: 325px) {
+    .recipe-page-intro-section {
+        padding-top: 40px;
+    }
+}
+
+.intro-text {
+    font-family: 'Lobster', sans-serif;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+@media (max-width: 750px) {
+    .intro-text {
+        margin-bottom: 40px;
+    }
+}
+
+.intro-section-search-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 60%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+@media (max-width: 500px) {
+    .intro-search-box {
+        max-width: 80%;
+    }
+}
+
+.search-title {
+    font-family: 'Cinzel', sans-serif;
+}
+
+@media (max-width: 500px) {
+    .input-group input.form-control {
+        font-size: 15px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 649px) {
+    .main-search-field {
+        height: 45px;
+    }
+}
+
+@media (min-width: 650px) {
+    .main-search-field {
+        height: 50px;
+    }
+}
+
+.advanced-search-modal-head {
+    display: flex;
+    padding: 20px;
+    justify-content: flex-end;
+}
+
+.modal-advanced-search-title {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.modal-advanced-search-content {
+    font-weight: 600;
+    color: black;
+    padding-top: 15px;
+}
+
+.advanced-search-modal-button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.search-result-not-found {
+    text-align: center;
+    font-size: 25px;
+}
+
+@media (max-width: 700px) {
+    .search-result-not-found {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 450px) {
+    .search-result-not-found {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 280px) {
+    .search-result-not-found {
+        font-size: 18px;
+    }
+}
+
+.submit-title {
+    font-family: 'Cinzel', sans-serif;
+}
+
+.recipes-continent-title-section {
+    font-family: 'Cinzel', sans-serif;
+    text-align: center;
+    font-weight: 600;
+}
+
+.icon-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3px;
+    font-size: 20px;
+}
+
+@media (max-width: 450px) {
+    .icon-legend {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 300px) {
+    .icon-legend {
+        font-size: 13px;
+    }
+}
+
+.vertical-line {
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@media (max-width: 350px) {
+    .vertical-line {
+        margin: 0 8px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 280px) {
+    .vertical-line {
+        margin: 0 6px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+
+.north-america-recipes-hidden {
+    display: none;
+}
+
+.central-america-recipes-hidden {
+    display: none;
+}
+
+.south-america-recipes-hidden {
+    display: none;
+}
+
+.europe-recipes-hidden {
+    display: none;
+}
+
+.africa-recipes-hidden {
+    display: none;
+}
+
+.asia-recipes-hidden {
+    display: none;
+}
+
+.oceania-recipes-hidden {
+    display: none;
+}
+
+.other-recipes-hidden {
+    display: none;
+}
+
+.row.showMoreButtonRow {
+    --bs-gutter-x: 0;
+    margin-top: 40px;
+}
+
+.row.hideExtraCardsButtonRow {
+    --bs-gutter-x: 0;
+    margin-top: 40px;
+}
+
+.card-general-padding {
+    padding: 20px;
+    padding-bottom: 15px;
+}
+
+.card-bottom-padding {
+    padding-bottom: 50px;
+}
+
+.card {
+    position: relative;
+}
+
+.card-text {
+    color: black;
+    position: absolute;
+    padding: 15px;
+}
+
+.card-title {
+    position: absolute;
+}
+
+.card-title-custom {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    background-color: rgb(255, 255, 255, 0.97);
+    padding: 10px 30px;
+    color: black;
+    border: solid 1px black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+}
+
+@media (max-width: 450px) {
+    .card-title-custom {
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 300px) {
+    .card-title-custom {
+        font-size: 16px;
+        padding: 4px 20px;
+    }
+}
+
+.card-icons {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+
+@media (max-width: 450px) {
+    .card-icons {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 350px) {
+    .card-icons {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+@media (max-width: 300px) {
+    .card-icons {
+        width: 14px;
+        height: 12px;
+    }
+}
+
+.recipe-card-quick-info {
+    background: rgba(255, 255, 255, 0.97);
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: unset;
+    border: solid 1px black;
+    font-weight: bold;
+}
+
+@media (max-width: 450px) {
+    .recipe-card-quick-info {
+        font-size: 15px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 350px) {
+    .recipe-card-quick-info {
+        font-size: 14px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 350px) {
+    .recipe-card-quick-info {
+        font-size: 12px;
+        padding: 4px;
+    }
+}
+
+.recipes-list-page-add-to-favorite-button {
+    margin-top: 20px;
+}
+
+
+
+
+/* CSS for the detailed recipe page */
+
+.detailed-page-recipe-intro-background {
+    background: url("../../../media/detailed-recipe-page-background1.jpg") center/cover no-repeat;
+}
+
+.detailed-page-image {
+    margin-bottom: 80px;
+    margin-top: 80px;
+    border-radius: 15px;
+}
+
+.detailed-recipe-titles {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+}
+
+
+@media (max-width: 1500px) {
+    .detailed-recipe-titles {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .detailed-recipe-titles {
+        padding-bottom: 10px;
+    }
+}
+
+.recipe-icon-text {
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.99);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: solid 1px black;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1500px) {
+    .recipe-icon-text {
+        padding: 5px;
+    }
+}
+
+.detailed-page-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.website-share-links-title {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: bold;
+}
+
+@media (max-width: 1199px) {
+.intro-section-bottom-margin {
+    margin-bottom: 80px;
+ }
+}
+
+.detailed-page-add-favorite-button {
+    margin-top: 90px;
+    width: 100%;
+}
+
+.section-bottom-margin {
+    margin-bottom: 80px;
+}
+
+.detailed-page-description-title-margin-top {
+    margin-top: 80px;
+}
+
+.detailed-page-text-content {
+    font-size: 20px;
+    text-align: justify;
+}
+
+@media (max-width: 1199px) {
+    .ingredients-instructions-section {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 550px) {
+    .ingredients-instructions-section-padding {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+@media (max-width: 350px) {
+    .ingredients-instructions-section-padding {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+.ingredient-list-margin-font-size {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.ingredient-fields {
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.instruction-list-margin-font-size {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.cooking-tools-padding {
+    padding: 10px;
+}
+
+.detailed-page-similar-recipe-card-title {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    background-color: rgb(255, 255, 255, 0.97);
+    padding: 10px;
+    color: black;
+    text-decoration: underline;
+    border: solid 1px black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+}
+
+@media (max-width: 360px) {
+    .detailed-page-similar-recipe-card-title {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+.card-text-similar-recipe {
+    color: black;
+    position: absolute;
+    padding: 15px;
+    width: 100%; 
+}
+
+
+.comments-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.users-comments-section {
+    margin-bottom: 50px;
+    background: url("../../../media/detailed-recipe-page-background2.jpg") center/cover no-repeat;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.users-comments-title {
+    font-size: 23px;
+}
+
+@media (max-width: 500px) {
+    .users-comments-title {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 300px) {
+    .users-comments-title {
+        font-size: 19px;
+    }
+}
+
+.users-comments-text {
+    font-size: 21px;
+}
+
+@media (max-width: 500px) {
+    .users-comments-text {
+        font-size: 18px;
+    }
+}
+
+.add-comment-title {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+}
+
+.add-comment-box {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #e4e4e4;
+    border-radius: 10px;
+    border: solid 0.5px black;
+}
+
+.detailed-page-add-comment-button {
+    margin-top: 20px;
+}
+
+
+.detailed-page-modal-head {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.detailed-page-modal-text {
+    font-size: 20px;
+}
+
+.detailed-page-modal-title {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+/* CSS for the footer section in recipes list and detailed pages */ 
+
+.footer-padding {
+    margin-top: 80px;
+}
+
+.footer-background {
+    background: url("../../../media/detailed-recipe-page-background1.jpg") center/cover no-repeat;
+}
+
+@media (max-width: 350px) {
+    .footer-text {
+    font-size: 18px;
+    }   
+}
+
+.footer-buttons-action-call {
+    text-decoration: underline;
+}
+
+.website-share-links-title {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: bold;
+}
+
+.website-share-icons {
+    border-radius: 4px;
+}
+
+.website-share-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.website-share-icons a {
+    margin: 0 5px;
+}
+
+@media (max-width: 350px) {
+    .website-share-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 350px) {
+    .website-share-icons a {
+        margin-top: 15px;
+    }
+}
+
+.back-to-top-link {
+    font-size: 20px;
+    color: black;
+}
+
+@media (max-width: 350px) {
+    .back-to-top-link {
+        font-size: 17px;
+    }
+}
+
+.back-to-top-link-bottom-margin {
+    margin-bottom: 50px;
+}
+
+
+
+
+
+/* CSS for the submit recipe page */
+
+.first-image-background-submit-page {
+    background: url("../../../media/pears-background.jpg") center/cover no-repeat;
+    height: 160vh;
+    margin: 0;
+}
+
+.page-title {
+    font-family: 'Lobster', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.page-subtitle {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+}
+
+.submit-recipe-form-background {
+    background: rgba(255, 255, 255, 0.85);
+    padding-top: 80px;
+    height: 160vh;
+}
+
+@media (max-width: 362px) {
+    .submit-recipe-form-background {
+        height: 160vh; 
+    }
+}
+
+.submit-recipe-form {
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 120vh; 
+    overflow-y: auto;
+}
+
+@media (max-width: 450px) {
+    .submit-recipe-form {
+        padding-left: 30px;
+        padding-right: 30px;
+        height: 120vh; 
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 362px) {
+    .submit-recipe-form {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 115vh; 
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 278px) {
+    .submit-recipe-form {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 110vh; 
+        overflow-y: auto;
+    }
+}
+
+.form-group-space {
+    margin-bottom: 20px;
+}
+
+.submit-recipe-page-picture-direction {
+    color: red;
+    font-weight: bold;
+}
+
+@media (max-width: 400px) {
+    .submit-recipe-page-picture-direction {
+        font-size: 14px;
+    }
+}
+
+.submit-recipe-page-picture-modal {
+    font-weight: bold;
+}
+
+@media (max-width: 400px) {
+    .submit-recipe-page-picture-modal {
+        font-size: 14px;
+    }
+}
+
+.submit-recipe-page-modal-head {
+    display: flex;
+    padding: 20px;
+    justify-content: flex-end;
+}
+
+.modal-title-submit-recipe-page {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.modal-text-submit-recipe-page {
+    font-size: 20px;
+}
+
+@media (max-width: 400px) {
+    .modal-text-submit-recipe-page {
+        font-size: 16px;
+    }
+}
+
+.submit-recipe-form-directives {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media (max-width: 650px) {
+    .submit-recipe-form-directives {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .submit-recipe-form-directives {
+        font-size: 16px;
+    }
+}
+
+.recipe-submit-page-submission-information {
+    display: flex; 
+    justify-content: center; 
+}
+
+.second-image-background {
+    background: url("../../../media/strawberry-background.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130vh; 
+}
+
+.third-image-background {
+    background: url("../../../media/blueberries-background.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130vh; 
+}
+
+.fourth-image-background {
+    background: url("../../../media/oranges-background.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130vh; 
+}
+
+.fifth-image-background {
+    background: url("../../../media/lemon-background2.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130vh; 
+}
+
+.sixth-image-background {
+    background: url("../../../media/watermelon-background.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130vh; 
+}
+
+.seventh-image-background {
+    background: url("../../../media/coconut-background.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130vh; 
+}
+
+.recipe-submit-page-fruit-background {
+    background-color: rgba(255, 255, 255, 0.90);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.recipe-submit-page-fruit-quote {
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+    text-align: center;
+}
+
+.fruit-quote {
+    font-family: 'Lobster', sans-serif;
+    font-size: 50px;
+}
+
+@media (max-width: 425px) {
+    .fruit-quote {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 350px) {
+    .fruit-quote {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 350px) {
+    .fruit-quote {
+        font-size: 30px;
+    }
+}
+
+.fruit-quote-author {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+}
+
+@media (max-width: 350px) {
+    .fruit-quote-author {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 300px) {
+    .fruit-quote-author {
+        font-size: 17px;
+    }
+}
+
+
+
+
+
+/* CSS for the succcess submit recipe page */
+
+.image-background-recipe-submit-success-page {
+    background: url("../../../media/cherries-background.jpg") center/cover no-repeat;
+    height: 120vh;
+    margin: 0;
+}
+
+.buttons-bottom-padding {
+    padding-bottom: 10px;
+}
+
+.success-page-modal-head {
+    display: flex;
+    padding: 20px;
+    justify-content: flex-end;
+}
+
+.modal-title-success-page {
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.modal-text-success-page {
+    font-size: 20px;
+}
+
+@media (max-width: 400px) {
+    .modal-text-submit-recipe-page {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+/* CSS for the failed submit recipe page */
+
+.image-background-recipe-submit-failed-page {
+    background: url("../../../media/lemon-background.jpg") center/cover no-repeat;
+    height: 120vh;
+    margin: 0;
+}
+
+.buttons-bottom-padding {
+    padding-bottom: 10px;
+}

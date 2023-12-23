@@ -1,0 +1,144 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Cuisine atlas</title>
+    <link rel="shortcut icon" href="{% static 'accounts/img/website-logo.png' %}" type="image/x-icon">
+    <link rel="manifest" href="{% static 'recipes/manifest.json' %}">
+</head>
+
+<main>
+    <header>
+        <div class="header-display">
+            <nav class="navbar navbar-expand-md navbar-light justify-content-end">
+                <div class="logo-container">
+                    <img src="{% static 'accounts/img/website-logo.png' %}" alt="ac-logo" class="logo-image">
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse nav justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'recipes:home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'recipes:recipes_list_unsigned_users' %}">Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'recipes:about' %}">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+        <div class="image-background">
+            <div class="row action-boxes">
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
+                    <div class="action-box-1 login-page-white-background-bottom-padding">
+                        <h1 class="website-title">A tablespoon of discovery</h1>
+                        <br>
+                        <h2 class="page-main-message">Log in</h2>
+                        <br>
+                        <div class="container">
+                            <div class="row">
+                                {% if form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    <strong>Error(s):</strong>
+                                    <ul class="error-message">
+                                        {% for error in form.non_field_errors %}
+                                        <p>{{ error }}</p>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-2">
+                                </div>
+                                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-8">
+                                    <form action="{% url 'accounts:login' %}" method="POST"
+                                        class="row justify-content-center">
+                                        {% csrf_token %}
+                                        <h5>Email</h5>
+                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-12 login-form">
+                                            <div class="input-group input-group-lg">
+                                                <input id="username-field" name="{{ form.username.name }}" type="text"
+                                                    class="form-control" aria-label="username-login"
+                                                    aria-describedby="email-field">
+                                            </div>
+                                            {% if form.username.errors %}
+                                            <div class="alert alert-danger">
+                                                {% for error in form.username.errors %}
+                                                <p>{{ error }}</p>
+                                                {% endfor %}
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                        <h5>Password</h5>
+                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-12 login-form">
+                                            <div class="input-group input-group-lg">
+                                                <input id="password-field" name="{{ form.password.name }}"
+                                                    type="password" class="form-control" aria-label="password-login"
+                                                    aria-describedby="password-field">
+                                            </div>
+                                            {% if form.password.errors %}
+                                            <div class="alert alert-danger">
+                                                {% for error in form.password.errors %}
+                                                <p>{{ error }}</p>
+                                                {% endfor %}
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-10">
+                                            <button type="submit" class="btn btn-dark mt-3" id="login-button"
+                                                data-bs-dismiss="modal">Login</button>
+                                        </div>
+                                    </form>
+                                    <br>
+                                    <a href="{% url 'accounts:signup' %}" class="signup-link">Sign up</a>
+                                    <br>
+                                    <br>
+                                    <a href="{% url 'accounts:password_reset' %}" class="forgot-password-link">Forgot password?</a>
+                                </div>
+                                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'recipes/js/javascript.js' %}"></script>
+</main>
+
+</html>

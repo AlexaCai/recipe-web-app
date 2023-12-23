@@ -1,0 +1,396 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="{% static 'recipes/js/user-submit-recipe.js' %}" defer></script>
+    <title>Cuisine atlas</title>
+    <link rel="shortcut icon" href="{% static 'recipes/img/website-logo.png' %}" type="image/x-icon">
+    <link rel="manifest" href="{% static 'recipes/manifest.json' %}">
+</head>
+
+<main>
+    <header id="topsection">
+        <div class="header-display">
+            <nav class="navbar navbar-expand-md navbar-light justify-content-end">
+                <div class="logo-container">
+                    <img src="{% static 'recipes/img/website-logo.png' %}" alt="ac-logo" class="logo-image">
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse nav justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'recipes:home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            {% if user.is_authenticated %}
+                            <a class="nav-link" href="{% url 'recipes:recipes_list_signed_users' %}">
+                                Recipes
+                            </a>
+                            {% else %}
+                            <a class="nav-link" href="{% url 'recipes:recipes_list_unsigned_users' %}">
+                                Recipes
+                            </a>
+                            {% endif %}                        
+                        </li>
+                        <li class="nav-item">
+                            {% if user.is_authenticated %}
+                            <a class="nav-link" href="{% url 'accounts:profile' %}">Profile</a>
+                            {% endif %}
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'recipes:about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            {% if user.is_authenticated %}
+                            <a class="nav-link" href="{% url 'accounts:logout' %}">
+                                Logout
+                            </a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+        <div class="first-image-background-submit-page text-center justify-content-center">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-1">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-10 submit-recipe-form-background">
+                    <h1 class="page-title">Submit a recipe</h1>
+                    <br>
+                    <br>
+                    <form method="post" enctype="multipart/form-data" class="submit-recipe-form">
+                        {% csrf_token %}
+                        <h2 class="page-subtitle">Basic information</h2>
+                        <br>
+                        <div class="form-group form-group-space">
+                            <label for="id_recipe_name"><b>Recipe name - Field required</b></label>
+                            <input type="text" id="id_recipe_name" class="form-control" name="recipe_name" placeholder="e.g.: Tacos al pastor" required>
+                        </div>
+                        <div class="form-group form-group-space">
+                            <label for="id_description"><b>Description - Field required</b></label>
+                            <textarea id="id_description" class="form-control" name="description" rows="4" placeholder="e.g.: Tacos al pastor is a traditional mexican dish..." required></textarea>
+                        </div>
+                        <div class="form-group form-group-space">
+                            <label for="id_special_note"><b>Special note</b> - Optional</label>
+                            <textarea id="id_special_note" class="form-control" name="special_note" rows="4" placeholder="e.g.: If you don't have pork, you can always use..."></textarea>
+                        </div>
+                        <div class="form-group form-group-space">
+                            <label for="id_cooking_time"><b>Cooking Time - Field required (number only) </b></label>
+                            <input type="number" id="id_cooking_time" class="form-control" name="cooking_time" placeholder="e.g.: 30"
+                                required>
+                        </div>
+                        <div class="form-group form-group-space">
+                            <label for="id_number_of_portions"><b>Number of portions - Field required (number only)</b></label>
+                            <input type="number" id="id_number_of_portions" class="form-control"
+                                name="number_of_portions" placeholder="e.g.: 6" required>
+                        </div>
+                        <div class="form-group form-group-space">
+                            <label for="id_recipe_estimated_cost"><b>Estimated cost ($) - Field required (number only)</b></label>
+                            <input type="number" id="id_recipe_estimated_cost" class="form-control"
+                                name="recipe_estimated_cost" placeholder="e.g.: 15" required>
+                        </div>
+                        <div class="form-group form-group-space">
+                            <label for="{{ form.origin_country.id_for_label }}"><b>Origin country - Field required</b></label>
+                            <select name="{{ form.origin_country.html_name }}" id="{{ form.origin_country.auto_id }}" class="form-select">
+                                {% for choice in form.origin_country.field.choices %}
+                                    <option value="{{ choice.0 }}" {% if form.origin_country.value == choice.0 %}selected{% endif %}>{{ choice.1 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group form-group-space">
+                            <label for="{{ form.recipe_category.id_for_label }}"><b>Recipe category - Field required</b></label>
+                            <select name="{{ form.recipe_category.html_name }}" id="{{ form.recipe_category.auto_id }}" class="form-select">
+                                {% for choice in form.recipe_category.field.choices %}
+                                    <option value="{{ choice.0 }}" {% if form.recipe_category.value == choice.0 %}selected{% endif %}>{{ choice.1 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group form-group-space">
+                            <label for="id_pic"><b>Recipe picture - Field required</b> <br>
+                            <span class="submit-recipe-page-picture-direction">*Ensure to provide copyright free / good quality picture*</span><br>                       
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#recipeSubmitPictureInfoModal" class="submit-recipe-page-picture-modal">What's a good picture?</a></label>
+                            <input type="file" id="id_pic" name="pic" class="form-control" required>
+                        </div>  
+                        <div class="modal fade" id="recipeSubmitPictureInfoModal" tabindex="-1"
+                            aria-labelledby="recipeSubmitPictureInfoModal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="submit-recipe-page-modal-head">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4 class="modal-title-submit-recipe-page">What's a good picture?</h4>
+                                        <div class="row">
+                                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                            </div>
+                                            <div
+                                                class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 modal-text-submit-recipe-page">
+                                                <span>-Not blurry</span> <br>
+                                                <span>-Good light</span> <br>
+                                                <span>-Landscape mode (horizontal)</span> <br>
+                                                <span>-Only shows the recipe (e.g. no people)</span> <br><br>
+                                                <span>*1920 x 1280 size are preferred, but picture of other sizes can still be submitted. Our team will take care of resizing the photo if necessary.</span><br><br>
+                                                <h4 class="modal-title-submit-recipe-page">Important note</h4>
+                                                <span>If you submit a picture taken from the web, <span style="text-decoration: underline;"><b>make sure the photo is copyright free</b></span></span>
+                                            </div>
+                                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <h2 class="page-subtitle">Ingredients</h2>
+                        <h5 class="submit-recipe-form-directives">*Enter only one ingredient at a time*</h5>
+                        <br>                     
+                        <div id="ingredients-formset-container">
+                                {{ formset.management_form }}
+                                {% for form in formset %}
+                                    <div class="ingredients_formset">
+                                        {{ form.id }}
+                                        <div class="form-group form-group-space">
+                                            <label for="{{ form.ingredient_name.id_for_label }}"><b>Ingredient - Field required</b></label>
+                                                <input type="text" id="{{ form.ingredient_name.auto_id }}" class="form-control" name="{{ form.ingredient_name.html_name }}" placeholder="e.g.: Tortillas" required>
+                                        </div>
+                                        <div class="form-group form-group-space">
+                                            <label for="{{ form.quantity.id_for_label }}"><b>Quantity - Field required (number only)</b></label>
+                                                <input type="number" id="{{ form.quantity.auto_id }}" class="form-control" name="{{ form.quantity.html_name }}" placeholder="e.g.: 25" required>                                            </div>
+                                        <div class="form-group form-group-space">
+                                            <label for="{{ form.unit_of_measurement.id_for_label }}"><b>Measurement unit - Field required</b></label>
+                                            <select name="{{ form.unit_of_measurement.html_name }}" id="{{ form.unit_of_measurement.auto_id }}" class="form-select">
+                                                {% for choice in form.unit_of_measurement.field.choices %}
+                                                    <option value="{{ choice.0 }}" {% if form.unit_of_measurement.value == choice.0 %}selected{% endif %}>{{ choice.1 }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="form-group form-group-space">
+                                            <label for="{{ form.possible_substitute.id_for_label }}"><b>Possible substitute</b> - Optional</label>
+                                            <input type="text" id="{{ form.possible_substitute.auto_id }}" class="form-control" name="{{ form.possible_substitute.html_name }}" placeholder="e.g.: Pitas">
+                                        </div>
+                                        <div class="form-group form-group-space">
+                                            <label for="{{ form.substitue_special_note.id_for_label }}"><b>Substitute special note</b> - Optional</label>
+                                            <textarea id="{{ form.substitue_special_note.auto_id }}" class="form-control" name="{{ form.substitue_special_note.html_name }}" rows="6" placeholder="e.g.: If tortillas are not available, pitas can be used to..."></textarea>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                        </div>
+                        <br>
+                        <button type="button" id="ingredient-form" class="btn btn-dark">Add Ingredient</button>
+                        <br>
+                        <br>
+                        <br>
+                        <button type="button" id="remove-ingredient-form" class="btn btn-danger remove-button" style="display:none; margin-bottom: 60px;">Remove last ingredient</button>
+                        <h2 class="page-subtitle">Allergen(s)</h2>
+                        <h5 class="submit-recipe-form-directives">*Enter only one allergen at a time*</h5>
+                        <br>
+                        <div id="allergens-formset-container">
+                                {{ allergens_formset.management_form }}
+                                {% for form in allergens_formset %}
+                                <div class="allergen_formset">
+                                    {{ form.id }}
+                                    <div class="form-group form-group-space">
+                                        <label for="{{ form.allergen.id_for_label }}"><b>Allergen</b> - Optional</label>
+                                            <input type="text" id="{{ form.allergen.auto_id }}" class="form-control" name="{{ form.allergen.html_name }}" placeholder="e.g.: Coriander">
+                                    </div>
+                                </div>
+                                {% endfor %}
+                        </div>
+                        <br>
+                        <button type="button" id="allergen-form" class="btn btn-dark">Add allergen</button>
+                        <br>
+                        <br>
+                        <br>
+                        <button type="button" id="remove-allergen-form" class="btn btn-danger remove-button" style="display:none; margin-bottom: 60px;">Remove last allergen</button>
+                        <h2 class="page-subtitle">Instructions</h2>
+                        <h5 class="submit-recipe-form-directives">*Enter only one step/description at a time*</h5>
+                        <h5 class="submit-recipe-form-directives">*Ensure to provide enough directions*</h5>
+                        <br>
+                        <div id="cooking-instructions-formset-container">
+                               {{ cooking_instructions_formset.management_form }}
+                                {% for form in cooking_instructions_formset %}
+                                <div class="cooking_instructions_formset">
+                                    {{ form.id }}
+                                    <div class="form-group form-group-space">
+                                        <label for="{{ form.step_name.id_for_label }}"><b>Step - Required field</b></label>
+                                            <input type="text" id="{{ form.step_name.auto_id }}" class="form-control" name="{{ form.step_name.html_name }}" placeholder="e.g.: Preparing the meat" required>
+                                    </div>
+                                    <div class="form-group form-group-space">
+                                        <label for="{{ form.step_instruction.id_for_label }}"><b>Description - Field required</b></label>
+                                            <input type="text" id="{{ form.step_instruction.auto_id }}" class="form-control" name="{{ form.step_instruction.html_name }}" placeholder="e.g.: Marinate the meat for 6 hours with..." required>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                        </div>
+                        <br>
+                        <button type="button" id="cooking-instructions-form" class="btn btn-dark">Add step</button>
+                        <br>
+                        <br>
+                        <br>
+                        <button type="button" id="remove-instructions-form" class="btn btn-danger remove-button" style="display:none; margin-bottom: 60px;">Remove last step</button>
+                        <h2 class="page-subtitle">Cooking tools</h2>
+                        <h5 class="submit-recipe-form-directives">*Enter only one cooking tool at a time*</h5>
+                        <br>
+                        <div id="recipe-tools-formset-container">
+                                {{ recipe_tools_formset.management_form }}
+                                {% for form in recipe_tools_formset %}
+                                <div class="recipe_tools_formset">
+                                    {{ form.id }}
+                                    <div class="form-group form-group-space">
+                                        <label for="{{ form.cooking_tool_name.id_for_label }}"><b>Cooking tools - Field required</b></label>
+                                            <input type="text" id="{{ form.cooking_tool_name.auto_id }}" class="form-control" name="{{ form.cooking_tool_name.html_name }}" placeholder="e.g: Measuring cup" required>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                        </div>
+                        <br>
+                        <button type="button" id="recipe-tools-form" class="btn btn-dark">Add tool</button>
+                        <br>
+                        <br>
+                        <br>
+                        <button type="button" id="remove-tools-form" class="btn btn-danger remove-button" style="display:none; margin-bottom: 60px;">Remove last tool</button>
+                        <h2 class="page-subtitle">Similar recipe(s)</h2>
+                        <h5 class="submit-recipe-form-directives">*Enter only one similar recipe at a time*</h5>
+                        <br>
+                        <div id="recipe-similar-complementary-formset-container">
+                                {{ recipe_similar_complementary_formset.management_form }}
+                                {% for form in recipe_similar_complementary_formset %}
+                                <div class="recipe_similar_complementary_formset">
+                                    {{ form.id }}
+                                    <div class="form-group form-group-space">
+                                        <label for="{{ form.complementary_recipe_name.id_for_label }}"><b>Similar recipe</b> - Optional</label>
+                                            <input type="text" id="{{ form.complementary_recipe_name.auto_id }}" class="form-control" name="{{ form.complementary_recipe_name.html_name }}" placeholder="e.g: Tacos suadero">
+                                    </div>
+                                    <div class="form-group form-group-space">
+                                        <label for="{{ form.complementary_recipe_link_unsigned_users.id_for_label }}"><b>Similar recipe url</b> - Optional</label>
+                                            <input type="text" id="{{ form.complementary_recipe_link_unsigned_users.auto_id }}" class="form-control" name="{{ form.complementary_recipe_link_unsigned_users.html_name }}" placeholder="e.g.: http://tablespoondiscovery/recipes-detail-unsigned-users/7">
+                                    </div>
+                                </div>
+                                {% endfor %}
+                        </div>
+                        <br>
+                        <button type="button" id="recipe-similar-complementary-form" class="btn btn-dark">Add similar
+                            recipe</button>
+                        <br>
+                        <button type="button" id="remove-similar-recipe-form" class="btn btn-danger remove-button" style="display:none; margin-bottom: 40px; margin-top: 40px;">Remove last recipe</button><br>
+                        <span>*****</span>
+                        <br>
+                        <br>
+                        <button type="submit" value="submit" class="btn btn-dark">Submit recipe</button>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="recipe-submit-page-submission-information">Note: Our team reserves the right not to publish a submitted recipe if it is very similar to an existing recipe from our catalog or if its information is incomplete / not clear enough. Our team also reserves the right to edit a submitted recipe to bring it up to our quality standard if necessary. Our goal is to offer the best user experience by publishing recipes with complete and quality information.</p>
+                    </form>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-1">
+                </div>
+            </div>
+        </div>
+        <div class="second-image-background">
+            <div class="row recipe-submit-page-fruit-quote">
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
+                    <div class="recipe-submit-page-fruit-background">
+                        <h1 class="fruit-quote">"Instead of past, present, and future, I'd prefer chocolate, vanilla and strawberry"</h1>
+                            <br>
+                        <h2 class="fruit-quote-author">-Ashleigh Brilliant</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="third-image-background">
+            <div class="row recipe-submit-page-fruit-quote">
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
+                    <div class="recipe-submit-page-fruit-background">
+                        <h1 class="fruit-quote">"He had a crush on a blueberry bush once"</h1>
+                            <br>
+                        <h2 class="fruit-quote-author">-Rick Riordan</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fourth-image-background">
+            <div class="row recipe-submit-page-fruit-quote">
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
+                    <div class="recipe-submit-page-fruit-background">
+                        <h1 class="fruit-quote">"Little things. The thought of losing them makes them unbearably dear […]. The quarter moon, the taste of an orange. The smell of the pages of a new book."</h1>
+                            <br>
+                        <h2 class="fruit-quote-author">-Patricia Gaffney</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fifth-image-background">
+            <div class="row recipe-submit-page-fruit-quote">
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
+                    <div class="recipe-submit-page-fruit-background">
+                        <h1 class="fruit-quote">"When life gives you lemons, don’t make lemonade, make pink lemonade. Be unique."</h1>
+                            <br>
+                        <h2 class="fruit-quote-author">-Wanda Sykes</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sixth-image-background">
+            <div class="row recipe-submit-page-fruit-quote">
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
+                    <div class="recipe-submit-page-fruit-background">
+                        <h1 class="fruit-quote">"A watermelon that breaks open by itself tastes better than one cut with a knife."</h1>
+                            <br>
+                        <h2 class="fruit-quote-author">-Hualing Nieh Engle</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="seventh-image-background">
+            <div class="row recipe-submit-page-fruit-quote">
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
+                    <div class="recipe-submit-page-fruit-background">
+                        <h1 class="fruit-quote">"The two basic items necessary to sustain life are sunshine and coconut milk."</h1>
+                            <br>
+                        <h2 class="fruit-quote-author">-Dustin Hoffman</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'recipes/js/javascript.js' %}"></script>
+
+</main>
+
+</html>

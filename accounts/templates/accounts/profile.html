@@ -1,0 +1,679 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="{% static 'accounts/js/javascript.js' %}" defer></script>
+    <title>Cuisine atlas</title>
+    <link rel="shortcut icon" href="{% static 'accounts/img/website-logo.png' %}" type="image/x-icon">
+    <link rel="manifest" href="{% static 'recipes/manifest.json' %}">
+</head>
+
+<main>
+    <header id="topsection">
+        <div class="header-display">
+            <nav class="navbar navbar-expand-md navbar-light justify-content-end">
+                <div class="logo-container">
+                    <img src="{% static 'accounts/img/website-logo.png' %}" alt="ac-logo" class="logo-image">
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse nav justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'recipes:home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'recipes:recipes_list_signed_users' %}">Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'recipes:about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{%url 'accounts:logout' %}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+        <div>
+            <div class="profile-page-image-background">
+                <div class="intro-text">
+                    <h1 class="text-center">Welcome to your profile page</h1>
+                </div>
+                <div class="profile-page-create-recipe-box">
+                    <div class="text-center">
+                        <h3 class="profile-page-call-to-action">Create your own recipes</h3>
+                        <p>(These recipes will only be seen by you and won't be public)</p>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-3 col-2">
+                        </div>
+                        <div class="col-xl-6 col-lg-4 col-md-4 col-sm-6 col-8 d-flex justify-content-center">
+                            <button type="button" class="btn btn-dark btn-md" data-bs-toggle="modal"
+                                data-bs-target="#createPrivateRecipe">
+                                Create recipe
+                            </button>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-3 col-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="createPrivateRecipe" tabindex="-1" aria-labelledby="createPrivateRecipeLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-content text-center">
+                        <div class="profile-page-modal-head">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h3 class="create-recipe-form-subtitle">Basic information</h3>
+                            <br>
+                            <form method="POST" enctype="multipart/form-data" class="post-form"
+                                action="{% url 'accounts:user_private_recipe_new' %}">
+                                {% csrf_token %}
+                                <div class="form-group create-recipe-form-group-space">
+                                    <label for="id_recipe_name"><b>Recipe name - Field required</b></label>
+                                    <input type="text" id="id_recipe_name" class="form-control" name="recipe_name"
+                                        placeholder="e.g.: Tacos al pastor" required>
+                                </div>
+                                <div class="form-group create-recipe-form-group-space">
+                                    <label for="id_description"><b>Description - Field required</b></label>
+                                    <textarea id="id_description" class="form-control" name="description" rows="4"
+                                        placeholder="e.g.: Tacos al pastor use traditional Mexican adobada..."></textarea>
+                                </div>
+                                <div class="form-group create-recipe-form-group-space">
+                                    <label for="id_special_note"><b>Special note</b> - Optional</label>
+                                    <textarea id="id_special_note" class="form-control" name="special_note" rows="4"
+                                        placeholder="e.g.: If you don't have pork, you can always use..."></textarea>
+                                </div>
+                                <div class="form-group create-recipe-form-group-space">
+                                    <label for="id_cooking_time"><b>Cooking Time - Field required (number only)
+                                        </b></label>
+                                    <input type="number" id="id_cooking_time" class="form-control" name="cooking_time"
+                                        placeholder="e.g.: 30" required>
+                                </div>
+                                <div class="form-group create-recipe-form-group-space">
+                                    <label for="id_number_of_portions"><b>Number of portions - Field required (number only)</b></label>
+                                    <input type="number" id="id_number_of_portions" class="form-control"
+                                        name="number_of_portions" placeholder="e.g.: 6" required>
+                                </div>
+                                <div class="form-group create-recipe-form-group-space">
+                                    <label for="id_recipe_estimated_cost"><b>Estimated cost ($) - Field required (number only)</b></label>
+                                    <input type="number" id="id_recipe_estimated_cost" class="form-control"
+                                        name="recipe_estimated_cost" placeholder="e.g.: 15" required>
+                                </div>
+                                <div class="form-group create-recipe-form-group-space">
+                                    <label for="{{ form.origin_country.id_for_label }}"><b>Origin country - Field
+                                            required</b></label>
+                                    <select name="{{ form.origin_country.html_name }}"
+                                        id="{{ form.origin_country.auto_id }}" class="form-select">
+                                        {% for choice in form.origin_country.field.choices %}
+                                        <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group create-recipe-form-group-space">
+                                    <label for="{{ form.recipe_category.id_for_label }}"><b>Recipe category - Field
+                                            required</b></label>
+                                    <select name="{{ form.recipe_category.html_name }}"
+                                        id="{{ form.recipe_category.auto_id }}" class="form-select">
+                                        {% for choice in form.recipe_category.field.choices %}
+                                        <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group create-recipe-form-group-space">
+                                    <label for="id_pic"><b>Recipe picture - Field required</b></label><br>
+                                    <span style="color: red;">*Pictures are automatically resized to 1920x1280. For a
+                                        better visual, upload images in landscape mode.</span>
+                                    <input type="file" id="id_pic" name="pic" class="form-control">
+                                </div>
+                                <br>
+                                <h3 class="create-recipe-form-subtitle">Ingredients</h3>
+                                <h5 class="create-recipe-form-directives">*Enter only one ingredient at a time*</h5>
+                                <br>
+                                <div id="ingredients-formset-container">
+                                    {{ formset.management_form }}
+                                    {% for form in formset %}
+                                    <div class="ingredients_formset">
+                                        {{ form.id }}
+                                        <div class="form-group create-recipe-form-group-space">
+                                            <label for="{{ form.ingredient_name.id_for_label }}"><b>Ingredient - Field
+                                                    required</b></label>
+                                            <input type="text" id="{{ form.ingredient_name.auto_id }}"
+                                                class="form-control" name="{{ form.ingredient_name.html_name }}"
+                                                placeholder="e.g.: Tortillas" required>
+                                        </div>
+                                        <div class="form-group create-recipe-form-group-space">
+                                            <label for="{{ form.quantity.id_for_label }}"><b>Quantity - Field required
+                                                    (number only)</b></label>
+                                            <input type="number" id="{{ form.quantity.auto_id }}" class="form-control"
+                                                name="{{ form.quantity.html_name }}" placeholder="e.g.: 25" required>
+                                        </div>
+                                        <div class="form-group create-recipe-form-group-space">
+                                            <label for="{{ form.unit_of_measurement.id_for_label }}"><b>Measurement unit
+                                                    - Field required</b></label>
+                                            <select name="{{ form.unit_of_measurement.html_name }}"
+                                                id="{{ form.unit_of_measurement.auto_id }}" class="form-select">
+                                                {% for choice in form.unit_of_measurement.field.choices %}
+                                                <option value="{{ choice.0 }}">{{choice.1 }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="form-group create-recipe-form-group-space">
+                                            <label for="{{ form.possible_substitute.id_for_label }}"><b>Possible
+                                                    substitute</b> - Optional</label>
+                                            <input type="text" id="{{ form.possible_substitute.auto_id }}"
+                                                class="form-control" name="{{ form.possible_substitute.html_name }}"
+                                                placeholder="e.g.: Pitas">
+                                        </div>
+                                        <div class="form-group create-recipe-form-group-space">
+                                            <label for="{{ form.substitue_special_note.id_for_label }}"><b>Substitute
+                                                    special note</b> - Optional</label>
+                                            <textarea id="{{ form.substitue_special_note.auto_id }}"
+                                                class="form-control" name="{{ form.substitue_special_note.html_name }}"
+                                                rows="6"
+                                                placeholder="e.g.: If tortillas are not available, pitas can be used to..."></textarea>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <br>
+                                <button type="button" id="add-ingredient-form" class="btn btn-dark">Add
+                                    Ingredient</button>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="remove-ingredient-form"
+                                        class="btn btn-danger remove-button"
+                                        style="display:none; margin-bottom: 60px;">Remove last ingredient</button>
+                                </div>
+                                <h3 class="create-recipe-form-subtitle">Allergen(s)</h3>
+                                <h5 class="create-recipe-form-directives">*Enter only one allergen at a time*</h5>
+                                <br>
+                                <div id="allergens-formset-container">
+                                    {{ allergens_formset.management_form }}
+                                    {% for form in allergens_formset %}
+                                    <div class="allergen_formset">
+                                        {{ form.id }}
+                                        <div class="form-group create-recipe-form-group-space">
+                                            <label for="{{ form.allergen.id_for_label }}"><b>Allergen</b> -
+                                                Optional</label>
+                                            <input type="text" id="{{ form.allergen.auto_id }}" class="form-control"
+                                                name="{{ form.allergen.html_name }}" placeholder="e.g.: coriander">
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <br>
+                                <button type="button" id="add-allergen-form" class="btn btn-dark">Add allergen</button>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="remove-allergen-form" class="btn btn-danger remove-button"
+                                        style="display:none; margin-bottom: 60px;">Remove last allergen</button>
+                                </div>
+                                <h3 class="create-recipe-form-subtitle">Instructions</h3>
+                                <h5 class="create-recipe-form-directives">*Enter only one step/description at a time*</h5>
+                                <br>
+                                <div id="cooking-instructions-formset-container">
+                                    {{ cooking_instructions_formset.management_form }}
+                                    {% for form in cooking_instructions_formset %}
+                                    <div class="cooking_instructions_formset">
+                                        {{ form.id }}
+                                        <div class="form-group create-recipe-form-group-space">
+                                            <label for="{{ form.step_name.id_for_label }}"><b>Step - Required
+                                                    field</b></label>
+                                            <input type="text" id="{{ form.step_name.auto_id }}" class="form-control"
+                                                name="{{ form.step_name.html_name }}"
+                                                placeholder="e.g.: Step 1 - Preparing" required>
+                                        </div>
+                                        <div class="form-group create-recipe-form-group-space">
+                                            <label for="{{ form.step_instruction.id_for_label }}"><b>Description - Field
+                                                    required</b></label>
+                                            <input type="text" id="{{ form.step_instruction.auto_id }}"
+                                                class="form-control" name="{{ form.step_instruction.html_name }}"
+                                                placeholder="e.g.: Marinate the meat for..." required>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <br>
+                                <button type="button" id="add-cooking-instruction-form" class="btn btn-dark">Add
+                                    step</button>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="remove-cooking-instruction-form"
+                                        class="btn btn-danger remove-button"
+                                        style="display:none; margin-bottom: 60px;">Remove last step</button>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-dark">Create</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 class="text-center profile-page-title" id="createdRecipes">Created recipes</h1>
+            <br>
+            <div class="icon-legend">
+                <img src="{% static 'accounts/img/flag-icon.png' %}" alt="flag-icon"
+                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+                <span class="icon-separator-vertical-line">|</span>
+                <img src="{% static 'accounts/img/difficulty-icon.png' %}" alt="flag-icon"
+                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+                <span class="icon-separator-vertical-line">|</span>
+                <img src="{% static 'accounts/img/difficulty-icon.png' %}" alt="flag-icon"
+                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+            </div>
+            <div class="row back-to-top">
+                <div class="col-2">
+                </div>
+                <div class="col-8 text-center">
+                    <br>
+                    <a href="#topsection" class="back-to-top-link">Back to top</a>
+                    <br>
+                    <br>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row recipe-card-padding created-recipe-card">
+                {% for object in created_recipes %}
+                <div
+                    class="col-xl-4 col-lg-6 col-sm-12 recipe-card-padding created-recipe-card {% if forloop.counter > 6 %}created-recipe-card-hidden{% endif %}">
+                    <div class="card text-bg-dark">
+                        <a href="{{object.get_absolute_url_signed_users}}">
+                            <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
+                        </a>
+                        <div class="card-text">
+                            <div>
+                                <a href="{{object.get_absolute_url_signed_users}}">
+                                    <h5 class="card-title-custom">{{ object.recipe_name }}</h5>
+                                </a>
+                            </div>
+                            <div class="recipe-card-quick-info">
+                                <img src="{% static 'accounts/img/flag-icon.png' %}" class="card-icons" alt="flag-icon"><span>{{ object.origin_country }}</span>
+                            </div>
+                            <br>
+                            <div class="recipe-card-quick-info">
+                                <img src="{% static 'accounts/img/difficulty-icon.png' %}" class="card-icons"
+                                    alt="difficulty-icon"><span>{{ object.difficulty }}</span>
+                            </div>
+                            <br>
+                            <div class="recipe-card-quick-info">
+                                <img src="{% static 'accounts/img/category-icon.png' %}" class="card-icons"
+                                    alt="category-icon"><span>{{ object.recipe_category }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                            <button type="button" class="btn btn-danger w-33" data-bs-toggle="modal"
+                                data-bs-target="#deleteRecipeModal{{ object.id }}">
+                                Delete
+                            </button>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+                        </div>
+                    </div>
+                    <div class="modal fade" id="deleteRecipeModal{{ object.id }}" tabindex="-1"
+                        aria-labelledby="deleteRecipeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content text-center">
+                                <div class="profile-page-modal-head">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4 class="create-recipe-form-subtitle">Delete recipe</h4>
+                                    <div class="row">
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                        </div>
+                                        <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 text-center">
+                                            <p>Are you sure you want to delete this recipe? This action is
+                                                irreversible.</p>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="{% url 'accounts:delete_recipe' object.id %}"
+                                        class="btn btn-danger">Delete</a>
+                                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% if forloop.last %}
+                <div class="row showMoreButtonRow">
+                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonCreatedRecipe">
+                            Show More
+                        </button>
+                    </div>
+                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if forloop.last %}
+                <div class="row hideExtraCardsButtonRow">
+                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonCreatedRecipe"
+                            style="display: none;">
+                            Show less
+                        </button>
+                    </div>
+                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
+                    </div>
+                </div>
+                {% endif %}
+
+                {% empty %}
+                <h5 class="text-center">No created recipes available.</h5>
+                {% endfor %}
+            </div>
+            <br>
+            <br>
+            <h1 class="text-center profile-page-title" id="favoriteRecipes">Favorite recipes</h1>
+            <br>
+            <div class="icon-legend">
+                <img src="{% static 'accounts/img/flag-icon.png' %}" alt="flag-icon"
+                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+                <span class="icon-separator-vertical-line">|</span>
+                <img src="{% static 'accounts/img/difficulty-icon.png' %}" alt="flag-icon"
+                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+                <span class="icon-separator-vertical-line">|</span>
+                <img src="{% static 'accounts/img/category-icon.png' %}" alt="flag-icon"
+                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-8 text-center">
+                    <br>
+                    <a href="#topsection" class="back-to-top-link">Back to top</a>
+                    <br>
+                    <br>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row recipe-card-padding favorite-recipe-card">
+                {% for object in favorite_recipes %}
+                <div
+                    class="col-xl-4 col-lg-6 col-sm-12 recipe-card-padding favorite-recipe-card {% if forloop.counter > 6 %}favorite-recipe-card-hidden{% endif %}">
+                    <div class="card text-bg-dark">
+                        <a href="{{object.get_absolute_url_signed_users}}">
+                            <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
+                        </a>
+                        <div class="card-text">
+                            <div>
+                                <a href="{{object.get_absolute_url_signed_users}}">
+                                    <h5 class="card-title-custom">{{ object.recipe_name }}</h5>
+                                </a>
+                            </div>
+                            <div class="recipe-card-quick-info">
+                                <img src="{% static 'accounts/img/flag-icon.png' %}" class="card-icons" alt="flag-icon"><span>{{ object.origin_country }}</span>
+                            </div>
+                            <br>
+                            <div class="recipe-card-quick-info">
+                                <img src="{% static 'accounts/img/difficulty-icon.png' %}" class="card-icons"
+                                    alt="difficulty-icon"><span>{{ object.difficulty }}</span>
+                            </div>
+                            <br>
+                            <div class="recipe-card-quick-info">
+                                <img src="{% static 'accounts/img/category-icon.png' %}" class="card-icons"
+                                    alt="category-icon"><span>{{ object.recipe_category }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                            <div id="favourite-section" class="favorite-card-remove-button-margin">
+                                <a href="{% url 'accounts:favorite_add' object.id %}" class="btn btn-danger">Remove</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+                        </div>
+                    </div>
+                </div>
+
+                {% if forloop.last %}
+                <div class="row showMoreButtonRow">
+                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonFavoriteRecipe">
+                            Show More
+                        </button>
+                    </div>
+                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if forloop.last %}
+                <div class="row hideExtraCardsButtonRow">
+                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonFavoriteRecipe"
+                            style="display: none;">
+                            Show less
+                        </button>
+                    </div>
+                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
+                    </div>
+                </div>
+                {% endif %}
+
+                {% empty %}
+                <h5 class="text-center">No favorite recipes yet.</h5>
+                {% endfor %}
+            </div>
+            <br>
+            <br>
+            <div class="text-center">
+                <h1 class="profile-page-title">Delete account</h1>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                        <button type="button" class="btn btn-danger w-50" data-bs-toggle="modal"
+                            data-bs-target="#deleteRecipeModal{{ object.id }}">
+                            Delete
+                        </button>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+                    </div>
+                </div>
+                <div class="modal fade" id="deleteRecipeModal{{ object.id }}" tabindex="-1"
+                    aria-labelledby="deleteRecipeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content text-center">
+                            <div class="profile-page-modal-head">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h4 class="create-recipe-form-subtitle">Delete account</h4>
+                                <div class="row">
+                                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                    </div>
+                                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 text-center">
+                                        <p>Are you sure you want to delete this account? This action is
+                                            irreversible.</p>
+                                    </div>
+                                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="{% url 'accounts:delete_account' %}" class="btn btn-danger">Delete</a>
+                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </body>
+
+    <footer>
+        <div class="footer-padding">
+            <div class="footer-background">
+                <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-8 text-center">
+                        <br>
+                        <br>
+                        <h1 class="website-title">A tablespoon of discovery</h1>
+                    </div>
+                    <div class="col-2">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-8 text-center">
+                        <br>
+                        <h4>Want to create your own recipes and share it with the world?
+                            Proud of one of your local recipe delight? <br><br></h4>
+                        <h4 class="footer-buttons-action-call">Submit your recipe to our catalog right now quickly
+                            and easily.</h4> <br><br>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-1">
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-10">
+                                    <button type="button" class="btn btn-dark w-100"
+                                        onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
+                                        recipe</button>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <br>
+                        <br>
+                        <p>*****</p>
+                        <br>
+                        <h4 class="share-website-text">Share website</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="a2a_kit a2a_kit_size_32 a2a_default_style webpage-share-icons">
+                            <a href="https://www.addtoany.com/share#url=http%3A%2F%2F127.0.0.1%3A8000%2Fhome%2F&amp;title="
+                                target="_blank"><img src="https://static.addtoany.com/buttons/a2a.svg" width="32"
+                                    height="32" style="background-color:#0166ff" class="website-share-icons"></a>
+                            <a href="https://www.addtoany.com/add_to/whatsapp?linkurl=http%3A%2F%2F127.0.0.1%3A8000%2Fhome%2F&amp;linkname="
+                                target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32"
+                                    height="32" style="background-color:#12af0a" class="website-share-icons"></a>
+                            <a href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2F127.0.0.1%3A8000%2Fhome%2F&amp;linkname="
+                                target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32"
+                                    height="32" style="background-color:#0866ff" class="website-share-icons"></a>
+                            <a href="https://www.addtoany.com/add_to/facebook_messenger?linkurl=http%3A%2F%2F127.0.0.1%3A8000%2Fhome%2F&amp;linkname="
+                                target="_blank"><img src="https://static.addtoany.com/buttons/facebook_messenger.svg"
+                                    width="32" height="32" style="background-color:#0084ff"
+                                    class="website-share-icons"></a>
+                            <a href="https://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2F127.0.0.1%3A8000%2Fhome%2F&amp;linkname="
+                                target="_blank"><img src="https://static.addtoany.com/buttons/gmail.svg" width="32"
+                                    height="32" style="background-color:#ea4335" class="website-share-icons"></a>
+                            <a href="https://www.addtoany.com/add_to/email?linkurl=http%3A%2F%2F127.0.0.1%3A8000%2Fhome%2F&amp;linkname="
+                                target="_blank"><img src="https://static.addtoany.com/buttons/email.svg" width="32"
+                                    height="32" style="background-color:#888990" class="website-share-icons"></a>
+                            <a href="https://www.addtoany.com/add_to/copy_link?linkurl=http%3A%2F%2F127.0.0.1%3A8000%2Fhome%2F&amp;linkname="
+                                target="_blank"><img src="https://static.addtoany.com/buttons/link.svg" width="32"
+                                    height="32" style="background-color: #888990" class="website-share-icons"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row back-to-top">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-8 text-center back-to-top-link-bottom-margin">
+                        <br>
+                        <br>
+                        <p>*****</p>
+                        <br>
+                        <a href="#topsection" class="back-to-top-link">Back to top</a>
+                    </div>
+                    <div class="col-2">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</main>
+
+</html>
