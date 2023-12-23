@@ -85,6 +85,7 @@
 .website-title {
     font-family: 'Lobster', sans-serif;
     font-size: 50px;
+    color: red;
 }
 
 @media (max-width: 405px) {
