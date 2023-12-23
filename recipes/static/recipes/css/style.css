@@ -1,7 +1,7 @@
 /* CSS code shared for all recipes app templates */
 
 .header-display {
-    padding: 15px;
+    padding: 10px;
     padding-left: 40px;
     padding-right: 40px;
     font-size: 15px;
@@ -60,7 +60,7 @@
 
 .image-background {
     background: url("../../recipes/img/landing-pages-background.jpg") center/cover no-repeat;
-    height: 125vh;
+    height: 145vh;
 }
 
 .welcome-boxes {
@@ -81,7 +81,7 @@
     font-size: 45px;
 }
 
-@media (max-width: 405px) {
+@media (max-width: 375px) {
     .website-title {
         font-size: 30px;
     }
@@ -99,7 +99,7 @@
     font-size: 28px;
 }
 
-@media (max-width: 355px) {
+@media (max-width: 375px) {
     .website-subtitle {
         font-size: 22px;
     }
@@ -132,7 +132,7 @@
 
 .home-page-modal-head {
     display: flex;
-    padding: 20px;
+    padding: 15px;
     justify-content: flex-end;
 }
 
@@ -143,13 +143,19 @@
 }
 
 .modal-text-home-page {
-    font-size: 20px;
+    font-size: 15px;
+}
+
+.download-app-icon {
+    height: 90px;
+    width: 90px;
+    padding-bottom: 10px;
 }
 
 @media (max-width: 450px) {
     .download-app-icon {
-        height: 100px;
-        width: 100px;
+        height: 70px;
+        width: 70px;
     }
 }
 

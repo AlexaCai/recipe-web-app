@@ -58,11 +58,11 @@
                         <div class="container">
                             <div class="row">
                                 {% if form.non_field_errors %}
-                                <div class="alert alert-danger">
+                                <div class="custom-alert-top-one alert-danger">
                                     <strong>Error(s):</strong>
                                     <ul class="error-message">
                                         {% for error in form.non_field_errors %}
-                                        <p>{{ error }}</p>
+                                        <p class="error-text">{{ error }}</p>
                                         {% endfor %}
                                     </ul>
                                 </div>
@@ -75,30 +75,30 @@
                                     <form action="{% url 'accounts:login' %}" method="POST"
                                         class="row justify-content-center">
                                         {% csrf_token %}
-                                        <h5>Email</h5>
+                                        <h6>Email</h6>
                                         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-12 login-form">
-                                            <div class="input-group input-group-lg">
+                                            <div class="input-group">
                                                 <input id="username-field" name="{{ form.username.name }}" type="text"
                                                     class="form-control" aria-label="username-login"
                                                     aria-describedby="email-field">
                                             </div>
                                             {% if form.username.errors %}
-                                            <div class="alert alert-danger">
+                                            <div class="custom-alert alert-danger">
                                                 {% for error in form.username.errors %}
                                                 <p>{{ error }}</p>
                                                 {% endfor %}
                                             </div>
                                             {% endif %}
                                         </div>
-                                        <h5>Password</h5>
+                                        <h6>Password</h6>
                                         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-12 login-form">
-                                            <div class="input-group input-group-lg">
+                                            <div class="input-group">
                                                 <input id="password-field" name="{{ form.password.name }}"
                                                     type="password" class="form-control" aria-label="password-login"
                                                     aria-describedby="password-field">
                                             </div>
                                             {% if form.password.errors %}
-                                            <div class="alert alert-danger">
+                                            <div class="custom-alert alert-danger">
                                                 {% for error in form.password.errors %}
                                                 <p>{{ error }}</p>
                                                 {% endfor %}
@@ -106,13 +106,12 @@
                                             {% endif %}
                                         </div>
                                         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-10">
-                                            <button type="submit" class="btn btn-dark mt-3" id="login-button"
+                                            <button type="submit" class="btn btn-dark btn-sm" id="login-button"
                                                 data-bs-dismiss="modal">Login</button>
                                         </div>
                                     </form>
                                     <br>
                                     <a href="{% url 'accounts:signup' %}" class="signup-link">Sign up</a>
-                                    <br>
                                     <br>
                                     <a href="{% url 'accounts:password_reset' %}" class="forgot-password-link">Forgot password?</a>
                                 </div>
