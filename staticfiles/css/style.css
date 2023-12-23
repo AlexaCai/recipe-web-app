@@ -85,7 +85,6 @@
 .website-title {
     font-family: 'Lobster', sans-serif;
     font-size: 50px;
-    color: red;
 }
 
 @media (max-width: 405px) {
@@ -103,7 +102,6 @@
 .website-subtitle {
     font-family: 'Cinzel', sans-serif;
     font-weight: 600;
-    color: green;
 }
 
 @media (max-width: 355px) {
