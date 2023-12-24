@@ -143,21 +143,21 @@
                                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
                                             </div>
                                             <div
-                                                class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 modal-text-submit-recipe-page">
+                                                class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
                                                 <span>-Not blurry</span> <br>
                                                 <span>-Good light</span> <br>
                                                 <span>-Landscape mode (horizontal)</span> <br>
                                                 <span>-Only shows the recipe (e.g. no people)</span> <br><br>
-                                                <span>*1920 x 1280 size are preferred, but picture of other sizes can still be submitted. Our team will take care of resizing the photo if necessary.</span><br><br>
+                                                <span>*1920 x 1280 size are preferred, but pictures of other sizes can still be submitted. Our team will take care of resizing the photo if necessary.</span><br><br>
                                                 <h4 class="modal-title-submit-recipe-page">Important note</h4>
-                                                <span>If you submit a picture taken from the web, <span style="text-decoration: underline;"><b>make sure the photo is copyright free</b></span></span>
+                                                <span>If you submit a picture taken from the web, <span style="text-decoration: underline;"><b>make sure the photo is copyright free.</b></span></span>
                                             </div>
                                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-dark"
+                                        <button type="button" class="btn btn-dark btn-sm"
                                             data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </div>
@@ -165,7 +165,7 @@
                         </div>
                         <br>
                         <h2 class="page-subtitle">Ingredients</h2>
-                        <h5 class="submit-recipe-form-directives">*Enter only one ingredient at a time*</h5>
+                        <h6 class="submit-recipe-form-directives">*Enter only one ingredient at a time*</h6>
                         <br>                     
                         <div id="ingredients-formset-container">
                                 {{ formset.management_form }}
@@ -199,13 +199,13 @@
                                 {% endfor %}
                         </div>
                         <br>
-                        <button type="button" id="ingredient-form" class="btn btn-dark">Add Ingredient</button>
+                        <button type="button" id="ingredient-form" class="btn btn-dark btn-sm">Add Ingredient</button>
                         <br>
                         <br>
                         <br>
-                        <button type="button" id="remove-ingredient-form" class="btn btn-danger remove-button" style="display:none; margin-bottom: 60px;">Remove last ingredient</button>
+                        <button type="button" id="remove-ingredient-form" class="btn btn-danger btn-sm remove-button" style="display:none; margin-bottom: 60px;">Remove last ingredient</button>
                         <h2 class="page-subtitle">Allergen(s)</h2>
-                        <h5 class="submit-recipe-form-directives">*Enter only one allergen at a time*</h5>
+                        <h6 class="submit-recipe-form-directives">*Enter only one allergen at a time*</h6>
                         <br>
                         <div id="allergens-formset-container">
                                 {{ allergens_formset.management_form }}
@@ -220,14 +220,14 @@
                                 {% endfor %}
                         </div>
                         <br>
-                        <button type="button" id="allergen-form" class="btn btn-dark">Add allergen</button>
+                        <button type="button" id="allergen-form" class="btn btn-dark btn-sm">Add allergen</button>
                         <br>
                         <br>
                         <br>
-                        <button type="button" id="remove-allergen-form" class="btn btn-danger remove-button" style="display:none; margin-bottom: 60px;">Remove last allergen</button>
+                        <button type="button" id="remove-allergen-form" class="btn btn-danger btn-sm remove-button" style="display:none; margin-bottom: 60px;">Remove last allergen</button>
                         <h2 class="page-subtitle">Instructions</h2>
-                        <h5 class="submit-recipe-form-directives">*Enter only one step/description at a time*</h5>
-                        <h5 class="submit-recipe-form-directives">*Ensure to provide enough directions*</h5>
+                        <h6 class="submit-recipe-form-directives">*Enter only one step/description at a time*</h6>
+                        <h6 class="submit-recipe-form-directives">*Ensure to provide enough directions*</h6>
                         <br>
                         <div id="cooking-instructions-formset-container">
                                {{ cooking_instructions_formset.management_form }}
@@ -246,13 +246,13 @@
                                 {% endfor %}
                         </div>
                         <br>
-                        <button type="button" id="cooking-instructions-form" class="btn btn-dark">Add step</button>
+                        <button type="button" id="cooking-instructions-form" class="btn btn-dark btn-sm">Add step</button>
                         <br>
                         <br>
                         <br>
-                        <button type="button" id="remove-instructions-form" class="btn btn-danger remove-button" style="display:none; margin-bottom: 60px;">Remove last step</button>
+                        <button type="button" id="remove-instructions-form" class="btn btn-danger btn-sm remove-button" style="display:none; margin-bottom: 60px;">Remove last step</button>
                         <h2 class="page-subtitle">Cooking tools</h2>
-                        <h5 class="submit-recipe-form-directives">*Enter only one cooking tool at a time*</h5>
+                        <h6 class="submit-recipe-form-directives">*Enter only one cooking tool at a time*</h6>
                         <br>
                         <div id="recipe-tools-formset-container">
                                 {{ recipe_tools_formset.management_form }}
@@ -267,13 +267,13 @@
                                 {% endfor %}
                         </div>
                         <br>
-                        <button type="button" id="recipe-tools-form" class="btn btn-dark">Add tool</button>
+                        <button type="button" id="recipe-tools-form" class="btn btn-dark btn-sm">Add tool</button>
                         <br>
                         <br>
                         <br>
-                        <button type="button" id="remove-tools-form" class="btn btn-danger remove-button" style="display:none; margin-bottom: 60px;">Remove last tool</button>
+                        <button type="button" id="remove-tools-form" class="btn btn-danger btn-sm remove-button" style="display:none; margin-bottom: 60px;">Remove last tool</button>
                         <h2 class="page-subtitle">Similar recipe(s)</h2>
-                        <h5 class="submit-recipe-form-directives">*Enter only one similar recipe at a time*</h5>
+                        <h6 class="submit-recipe-form-directives">*Enter only one similar recipe at a time*</h6>
                         <br>
                         <div id="recipe-similar-complementary-formset-container">
                                 {{ recipe_similar_complementary_formset.management_form }}
@@ -292,14 +292,14 @@
                                 {% endfor %}
                         </div>
                         <br>
-                        <button type="button" id="recipe-similar-complementary-form" class="btn btn-dark">Add similar
+                        <button type="button" id="recipe-similar-complementary-form" class="btn btn-dark btn-sm">Add similar
                             recipe</button>
                         <br>
-                        <button type="button" id="remove-similar-recipe-form" class="btn btn-danger remove-button" style="display:none; margin-bottom: 40px; margin-top: 40px;">Remove last recipe</button><br>
+                        <button type="button" id="remove-similar-recipe-form" class="btn btn-danger btn-sm remove-button" style="display:none; margin-bottom: 40px; margin-top: 40px;">Remove last recipe</button><br>
                         <span>*****</span>
                         <br>
                         <br>
-                        <button type="submit" value="submit" class="btn btn-dark">Submit recipe</button>
+                        <button type="submit" value="submit" class="btn btn-dark btn-sm">Submit recipe</button>
                         <br>
                         <br>
                         <br>
@@ -336,7 +336,7 @@
             <div class="row recipe-submit-page-fruit-quote">
                 <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
                     <div class="recipe-submit-page-fruit-background">
-                        <h1 class="fruit-quote">"Little things. The thought of losing them makes them unbearably dear […]. The quarter moon, the taste of an orange. The smell of the pages of a new book."</h1>
+                        <h1 class="fruit-quote">"Little things […]. The quarter moon, the taste of an orange. The smell of the pages of a new book."</h1>
                             <br>
                         <h2 class="fruit-quote-author">-Patricia Gaffney</h2>
                     </div>

@@ -79,22 +79,22 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 buttons-bottom-padding">
-                                    <a class="btn btn-dark w-100" href="{% url 'recipes:home' %}">
+                                    <a class="btn btn-dark btn-sm w-100" href="{% url 'recipes:home' %}">
                                         Return home
                                     </a>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 buttons-bottom-padding">
-                                    <a href="{% url 'recipes:user_submit_recipe' %}" class="btn btn-dark w-100">
+                                    <a href="{% url 'recipes:user_submit_recipe' %}" class="btn btn-dark btn-sm w-100">
                                         Try again
                                     </a>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 buttons-bottom-padding">
                                     {% if user.is_authenticated %}
-                                    <a class="btn btn-dark w-100" href="{% url 'recipes:recipes_list_signed_users' %}">
+                                    <a class="btn btn-dark btn-sm w-100" href="{% url 'recipes:recipes_list_signed_users' %}">
                                         See recipes
                                     </a>
                                     {% else %}
-                                    <a class="btn btn-dark w-100"
+                                    <a class="btn btn-dark btn-sm w-100"
                                         href="{% url 'recipes:recipes_list_unsigned_users' %}">
                                         See recipes
                                     </a>
@@ -102,7 +102,6 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
                     </div>
                 </div>
             </div>

@@ -766,6 +766,19 @@
     margin: 0;
 }
 
+@media (max-width: 392px) {
+    .first-image-background-submit-page {
+        height: 180vh;
+    }
+}
+
+
+@media (max-width: 359px) {
+    .first-image-background-submit-page {
+        height: 235vh;
+    }
+}
+
 .page-title {
     font-family: 'Lobster', sans-serif;
     font-weight: 600;
@@ -783,9 +796,15 @@
     height: 160vh;
 }
 
-@media (max-width: 362px) {
+@media (max-width: 392px) {
     .submit-recipe-form-background {
-        height: 160vh;
+        height: 180vh;
+    }
+}
+
+@media (max-width: 359px) {
+    .submit-recipe-form-background {
+        height: 235vh;
     }
 }
 
@@ -850,7 +869,7 @@
 
 .submit-recipe-page-modal-head {
     display: flex;
-    padding: 20px;
+    padding: 15px;
     justify-content: flex-end;
 }
 
@@ -858,16 +877,6 @@
     font-family: 'Cinzel', sans-serif;
     font-weight: 600;
     padding-bottom: 10px;
-}
-
-.modal-text-submit-recipe-page {
-    font-size: 20px;
-}
-
-@media (max-width: 400px) {
-    .modal-text-submit-recipe-page {
-        font-size: 16px;
-    }
 }
 
 .submit-recipe-form-directives {
@@ -960,21 +969,15 @@
     font-size: 50px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 411px) {
     .fruit-quote {
-        font-size: 40px;
+        font-size: 24px;
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 359px) {
     .fruit-quote {
-        font-size: 35px;
-    }
-}
-
-@media (max-width: 350px) {
-    .fruit-quote {
-        font-size: 30px;
+        font-size: 22px;
     }
 }
 
@@ -983,18 +986,18 @@
     font-weight: 600;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 411px) {
     .fruit-quote-author {
-        font-size: 20px;
+        font-size: 19px;
     }
 }
 
-@media (max-width: 300px) {
+
+@media (max-width: 359px) {
     .fruit-quote-author {
         font-size: 17px;
     }
 }
-
 
 
 
@@ -1013,7 +1016,7 @@
 
 .success-page-modal-head {
     display: flex;
-    padding: 20px;
+    padding: 15px;
     justify-content: flex-end;
 }
 
@@ -1021,10 +1024,6 @@
     font-family: 'Cinzel', sans-serif;
     font-weight: 600;
     padding-bottom: 10px;
-}
-
-.modal-text-success-page {
-    font-size: 20px;
 }
 
 @media (max-width: 400px) {
