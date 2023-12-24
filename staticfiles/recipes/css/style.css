@@ -477,6 +477,14 @@
     border-radius: 15px;
 }
 
+@media (max-width: 500px) {
+    .detailed-page-image {
+        margin-bottom: 40px;
+        margin-top: 40px;
+        border-radius: 15px;
+    }
+}
+
 .detailed-recipe-titles {
     font-family: 'Cinzel', sans-serif;
     font-weight: 600;
@@ -545,7 +553,7 @@
 }
 
 .detailed-page-text-content {
-    font-size: 20px;
+    font-size: 17px;
     text-align: justify;
 }
 
@@ -571,7 +579,7 @@
 
 .ingredient-list-margin-font-size {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .ingredient-fields {
@@ -581,7 +589,7 @@
 
 .instruction-list-margin-font-size {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .cooking-tools-padding {
@@ -591,7 +599,7 @@
 .detailed-page-similar-recipe-card-title {
     font-family: 'Cinzel', sans-serif;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 18px;
     background-color: rgb(255, 255, 255, 0.97);
     padding: 10px;
     color: black;
@@ -634,29 +642,17 @@
 }
 
 .users-comments-title {
-    font-size: 23px;
-}
-
-@media (max-width: 500px) {
-    .users-comments-title {
-        font-size: 21px;
-    }
+    font-size: 18px;
 }
 
 @media (max-width: 300px) {
     .users-comments-title {
-        font-size: 19px;
+        font-size: 16px;
     }
 }
 
 .users-comments-text {
-    font-size: 21px;
-}
-
-@media (max-width: 500px) {
-    .users-comments-text {
-        font-size: 18px;
-    }
+    font-size: 18px;
 }
 
 .add-comment-title {
@@ -667,11 +663,14 @@
 .add-comment-box {
     width: 100%;
     padding: 15px;
-    font-size: 20px;
     font-weight: 500;
     background-color: #e4e4e4;
     border-radius: 10px;
     border: solid 0.5px black;
+}
+
+.delete-update-comment-button-spacing {
+    margin: 0px 20px;
 }
 
 .detailed-page-add-comment-button {
