@@ -231,7 +231,6 @@
     align-items: center;
     justify-content: center; 
     height: 90vh; 
-    margin-top: 40px;
 }
 
 .delete-account-page-action-box-1 {
@@ -240,10 +239,11 @@
     padding: 20px;
     background-color: rgb(255, 255, 255, 0.90);
     border-radius: 10px;
+    margin-top: 40px;
 }
 
 @media (max-width: 575px) {
-    .logout-page-buttons-bottom-margin {
+    .delete-page-buttons-bottom-margin {
         margin-bottom: 20px;
     }
 }
