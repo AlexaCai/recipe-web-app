@@ -54,7 +54,7 @@
         <div>
             <div class="profile-page-image-background">
                 <div class="intro-text">
-                    <h1 class="text-center">Welcome to your profile page</h1>
+                    <h2 class="text-center">Welcome to your profile page</h2>
                 </div>
                 <div class="profile-page-create-recipe-box">
                     <div class="text-center">
@@ -66,7 +66,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-3 col-2">
                         </div>
                         <div class="col-xl-6 col-lg-4 col-md-4 col-sm-6 col-8 d-flex justify-content-center">
-                            <button type="button" class="btn btn-dark btn-md" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-dark btn-sm btn-md" data-bs-toggle="modal"
                                 data-bs-target="#createPrivateRecipe">
                                 Create recipe
                             </button>
@@ -148,7 +148,7 @@
                                 </div>
                                 <br>
                                 <h3 class="create-recipe-form-subtitle">Ingredients</h3>
-                                <h5 class="create-recipe-form-directives">*Enter only one ingredient at a time*</h5>
+                                <h6 class="create-recipe-form-directives">*Enter only one ingredient at a time*</h6>
                                 <br>
                                 <div id="ingredients-formset-container">
                                     {{ formset.management_form }}
@@ -197,18 +197,18 @@
                                     {% endfor %}
                                 </div>
                                 <br>
-                                <button type="button" id="add-ingredient-form" class="btn btn-dark">Add
+                                <button type="button" id="add-ingredient-form" class="btn btn-dark btn-sm">Add
                                     Ingredient</button>
                                 <br>
                                 <br>
                                 <br>
                                 <div class="d-flex justify-content-center">
                                     <button type="button" id="remove-ingredient-form"
-                                        class="btn btn-danger remove-button"
+                                        class="btn btn-danger btn-sm remove-button"
                                         style="display:none; margin-bottom: 60px;">Remove last ingredient</button>
                                 </div>
                                 <h3 class="create-recipe-form-subtitle">Allergen(s)</h3>
-                                <h5 class="create-recipe-form-directives">*Enter only one allergen at a time*</h5>
+                                <h6 class="create-recipe-form-directives">*Enter only one allergen at a time*</h6>
                                 <br>
                                 <div id="allergens-formset-container">
                                     {{ allergens_formset.management_form }}
@@ -225,16 +225,16 @@
                                     {% endfor %}
                                 </div>
                                 <br>
-                                <button type="button" id="add-allergen-form" class="btn btn-dark">Add allergen</button>
+                                <button type="button" id="add-allergen-form" class="btn btn-dark btn-sm">Add allergen</button>
                                 <br>
                                 <br>
                                 <br>
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="remove-allergen-form" class="btn btn-danger remove-button"
+                                    <button type="button" id="remove-allergen-form" class="btn btn-danger btn-sm remove-button"
                                         style="display:none; margin-bottom: 60px;">Remove last allergen</button>
                                 </div>
                                 <h3 class="create-recipe-form-subtitle">Instructions</h3>
-                                <h5 class="create-recipe-form-directives">*Enter only one step/description at a time*</h5>
+                                <h6 class="create-recipe-form-directives">*Enter only one step/description at a time*</h6>
                                 <br>
                                 <div id="cooking-instructions-formset-container">
                                     {{ cooking_instructions_formset.management_form }}
@@ -259,20 +259,20 @@
                                     {% endfor %}
                                 </div>
                                 <br>
-                                <button type="button" id="add-cooking-instruction-form" class="btn btn-dark">Add
+                                <button type="button" id="add-cooking-instruction-form" class="btn btn-dark btn-sm">Add
                                     step</button>
                                 <br>
                                 <br>
                                 <br>
                                 <div class="d-flex justify-content-center">
                                     <button type="button" id="remove-cooking-instruction-form"
-                                        class="btn btn-danger remove-button"
+                                        class="btn btn-danger btn-sm remove-button"
                                         style="display:none; margin-bottom: 60px;">Remove last step</button>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
+                                    <button type="button" class="btn btn-secondary btn-sm"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-dark">Create</button>
+                                    <button type="submit" class="btn btn-dark btn-sm">Create</button>
                                 </div>
                             </form>
                         </div>
@@ -281,20 +281,17 @@
             </div>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
-            <h1 class="text-center profile-page-title" id="createdRecipes">Created recipes</h1>
+            <h2 class="text-center profile-page-title" id="createdRecipes">Created recipes</h2>
             <br>
             <div class="icon-legend">
                 <img src="{% static 'accounts/img/flag-icon.png' %}" alt="flag-icon"
-                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+                    style="width: 15px; height: 15px; margin-right: 5px;"><span>Country</span>
                 <span class="icon-separator-vertical-line">|</span>
                 <img src="{% static 'accounts/img/difficulty-icon.png' %}" alt="flag-icon"
-                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+                    style="width: 15px; height: 15px; margin-right: 5px;"><span>Difficulty</span>
                 <span class="icon-separator-vertical-line">|</span>
                 <img src="{% static 'accounts/img/difficulty-icon.png' %}" alt="flag-icon"
-                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+                    style="width: 15px; height: 15px; margin-right: 5px;"><span>Category</span>
             </div>
             <div class="row back-to-top">
                 <div class="col-2">
@@ -302,7 +299,6 @@
                 <div class="col-8 text-center">
                     <br>
                     <a href="#topsection" class="back-to-top-link">Back to top</a>
-                    <br>
                     <br>
                 </div>
                 <div class="col">
@@ -342,7 +338,7 @@
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
-                            <button type="button" class="btn btn-danger w-33" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-danger btn-sm w-33" data-bs-toggle="modal"
                                 data-bs-target="#deleteRecipeModal{{ object.id }}">
                                 Delete
                             </button>
@@ -373,8 +369,8 @@
                                 </div>
                                 <div class="modal-footer">
                                     <a href="{% url 'accounts:delete_recipe' object.id %}"
-                                        class="btn btn-danger">Delete</a>
-                                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                        class="btn btn-danger btn-sm">Delete</a>
+                                    <button type="button" class="btn btn-dark btn-sm" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -386,7 +382,7 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonCreatedRecipe">
+                        <button type="button" class="btn btn-dark btn-sm w-75" id="showMoreButtonCreatedRecipe">
                             Show More
                         </button>
                     </div>
@@ -400,8 +396,8 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonCreatedRecipe"
-                            style="display: none;">
+                        <button type="button" class="btn btn-outline-danger btn-sm w-75" id="hideExtraCardButtonCreatedRecipe"
+                            style="display: none; margin-bottom: 35px; margin-top: -45px;">
                             Show less
                         </button>
                     </div>
@@ -414,19 +410,18 @@
                 <h5 class="text-center">No created recipes available.</h5>
                 {% endfor %}
             </div>
-            <br>
-            <br>
-            <h1 class="text-center profile-page-title" id="favoriteRecipes">Favorite recipes</h1>
+
+            <h2 class="text-center profile-page-title" id="favoriteRecipes">Favorite recipes</h2>
             <br>
             <div class="icon-legend">
                 <img src="{% static 'accounts/img/flag-icon.png' %}" alt="flag-icon"
-                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+                    style="width: 15px; height: 15px; margin-right: 5px;"><span>Country</span>
                 <span class="icon-separator-vertical-line">|</span>
                 <img src="{% static 'accounts/img/difficulty-icon.png' %}" alt="flag-icon"
-                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+                    style="width: 15px; height: 15px; margin-right: 5px;"><span>Difficulty</span>
                 <span class="icon-separator-vertical-line">|</span>
-                <img src="{% static 'accounts/img/category-icon.png' %}" alt="flag-icon"
-                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+                <img src="{% static 'accounts/img/difficulty-icon.png' %}" alt="flag-icon"
+                    style="width: 15px; height: 15px; margin-right: 5px;"><span>Category</span>
             </div>
             <div class="row">
                 <div class="col-2">
@@ -434,7 +429,6 @@
                 <div class="col-8 text-center">
                     <br>
                     <a href="#topsection" class="back-to-top-link">Back to top</a>
-                    <br>
                     <br>
                 </div>
                 <div class="col">
@@ -474,8 +468,8 @@
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
-                            <div id="favourite-section" class="favorite-card-remove-button-margin">
-                                <a href="{% url 'accounts:favorite_add' object.id %}" class="btn btn-danger">Remove</a>
+                            <div id="favourite-section">
+                                <a href="{% url 'accounts:favorite_add' object.id %}" class="btn btn-danger btn-sm">Remove</a>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
@@ -488,7 +482,7 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonFavoriteRecipe">
+                        <button type="button" class="btn btn-dark btn-sm w-75" id="showMoreButtonFavoriteRecipe">
                             Show More
                         </button>
                     </div>
@@ -502,9 +496,9 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonFavoriteRecipe"
-                            style="display: none;">
-                            Show less
+                        <button type="button" class="btn btn-outline-danger btn-sm w-75" id="hideExtraCardButtonFavoriteRecipe"
+                        style="display: none; margin-bottom: 35px; margin-top: -45px;">
+                        Show less
                         </button>
                     </div>
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
@@ -516,17 +510,16 @@
                 <h5 class="text-center">No favorite recipes yet.</h5>
                 {% endfor %}
             </div>
-            <br>
-            <br>
+
             <div class="text-center">
-                <h1 class="profile-page-title">Delete account</h1>
+                <h2 class="profile-page-title">Delete account</h2>
                 <br>
                 <br>
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
-                        <button type="button" class="btn btn-danger w-50" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-danger btn-sm w-33" data-bs-toggle="modal"
                             data-bs-target="#deleteRecipeModal{{ object.id }}">
                             Delete
                         </button>
@@ -556,8 +549,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <a href="{% url 'accounts:delete_account' %}" class="btn btn-danger">Delete</a>
-                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                <a href="{% url 'accounts:delete_account' %}" class="btn btn-danger btn-sm">Delete</a>
+                                <button type="button" class="btn btn-dark btn-sm" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -588,20 +581,21 @@
                     </div>
                     <div class="col-8 text-center">
                         <br>
-                        <h4>Want to create your own recipes and share it with the world?
-                            Proud of one of your local recipe delight? <br><br></h4>
-                        <h4 class="footer-buttons-action-call">Submit your recipe to our catalog right now quickly
-                            and easily.</h4> <br><br>
+                        <h6 class="footer-text">Want to create your own recipes and share it with the world?
+                            Proud of one of your local recipe delight? <br><br></h6>
+                        <h6 class="footer-buttons-action-call footer-text">Submit your recipe to our catalog right now
+                            quickly and
+                            easily.</h6><br>
                         <div class="container">
                             <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-1">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-2">
                                 </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-10">
-                                    <button type="button" class="btn btn-dark w-100"
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-8">
+                                    <button type="button" class="btn btn-dark btn-sm w-100"
                                         onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
                                         recipe</button>
                                 </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-1">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-2">
                                 </div>
                             </div>
                         </div>
@@ -609,19 +603,17 @@
                     <div class="col-2">
                     </div>
                 </div>
+                <br>
+                <br>
 
                 <div class="row">
                     <div class="col-12 text-center">
-                        <br>
-                        <br>
-                        <p>*****</p>
-                        <br>
-                        <h4 class="share-website-text">Share website</h4>
+                        <h4 class="website-share-links-title">Share website</h4>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center">
-                        <div class="a2a_kit a2a_kit_size_32 a2a_default_style webpage-share-icons">
+                        <div class="a2a_kit a2a_kit_size_32 a2a_default_style website-share-icons">
                             <a href="https://www.addtoany.com/share#url=http%3A%2F%2F127.0.0.1%3A8000%2Fhome%2F&amp;title="
                                 target="_blank"><img src="https://static.addtoany.com/buttons/a2a.svg" width="32"
                                     height="32" style="background-color:#0166ff" class="website-share-icons"></a>
@@ -648,7 +640,7 @@
                     </div>
                 </div>
 
-                <div class="row back-to-top">
+                <div class="row">
                     <div class="col-2">
                     </div>
                     <div class="col-8 text-center back-to-top-link-bottom-margin">
@@ -658,13 +650,14 @@
                         <br>
                         <a href="#topsection" class="back-to-top-link">Back to top</a>
                     </div>
-                    <div class="col-2">
+                    <div class="col">
                     </div>
                 </div>
 
             </div>
         </div>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>

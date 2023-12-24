@@ -452,12 +452,6 @@
     }
 }
 
-@media (max-width: 350px) {
-    .recipe-card-quick-info {
-        padding: 4px;
-    }
-}
-
 .recipes-list-page-add-to-favorite-button {
     margin-top: 20px;
 }
