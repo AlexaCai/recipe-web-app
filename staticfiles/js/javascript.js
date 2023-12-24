@@ -198,18 +198,18 @@ function displaySearchResults(data) {
         headingContainer.innerHTML = `
         <br>
         <br>
-        <h1 class="recipes-continent-title-section">Search results</h1> 
+        <h2 class="recipes-continent-title-section">Search results</h2> 
         <div class="icon-legend">
-        <img src="/static/recipes/img/flag-icon.png" alt="flag-icon" style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+        <img src="/static/recipes/img/flag-icon.png" alt="flag-icon" style="width: 15px; height: 15px; margin-right: 5px;"><span>Country</span>
         <span class="vertical-line">|</span>
-        <img src="/static/recipes/img/difficulty-icon.png" alt="level-icon" style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+        <img src="/static/recipes/img/difficulty-icon.png" alt="level-icon" style="width: 15px; height: 15px; margin-right: 5px;"><span>Difficulty</span>
         <span class="vertical-line">|</span>
-        <img src="/static/recipes/img/category-icon.png" alt="category-icon" style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+        <img src="/static/recipes/img/category-icon.png" alt="category-icon" style="width: 15px; height: 15px; margin-right: 5px;"><span>Category</span>
         </div> 
         <br>
         <br>
         <div class="search-result-not-found">
-            <button type="button" class="btn btn-danger" onclick="clearSearch()">Clear search</button>
+            <button type="button" class="btn btn-danger btn-sm" onclick="clearSearch()">Clear search</button>
             <br>
             <br>
         </div>

@@ -53,15 +53,15 @@
         <div>
             <div class="recipe-page-intro-section">
                 <div class="intro-text">
-                    <h1>
+                    <h2>
                         Millions of recipes in the world for an
                         infinite wealth of culinary and cultural delights
-                    </h1>
+                    </h2>
                 </div>
                 <div class="intro-section-search-box">
-                    <h1 class="search-title">
+                    <h3 class="search-title">
                         Search recipes
-                    </h1>
+                    </h3>
                     <br>
                     <form class="row justify-content-center" role="search">
                         <div class="col-md-10">
@@ -69,23 +69,23 @@
                                 <input id="recipe-search-by-name-input" type="text"
                                     class="form-control main-search-field" placeholder="Enter a recipe"
                                     aria-label="Search" aria-describedby="search-recipe-by-name-button">
-                                <button class="btn btn-light main-search-field" type="button"
+                                <button class="btn btn-light btn-sm main-search-field" type="button"
                                     id="search-recipe-by-name-button">Search</button>
                             </div>
                         </div>
                     </form>
                     <br>
-                    <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                    <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal"
                         data-bs-target="#advancedSearchModal">
                         Advanced search
                     </button>
                     <br>
                     <br>
                     <br>
-                    <h1 class="search-title">
+                    <h3 class="search-title">
                         Submit your recipe
-                    </h1>
-                    <button type="button" class="btn btn-light"
+                    </h3>
+                    <button type="button" class="btn btn-light btn-sm"
                         onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit recipe</button>
                     <div class="modal fade" id="advancedSearchModal" tabindex="-1" aria-labelledby="advancedSearchModal"
                         aria-hidden="true">
@@ -148,9 +148,10 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-dark advanced-search-modal-button"
+                                    <button type="button" class="btn btn-dark btn-sm advanced-search-modal-button"
                                         id="advanced-search-filters-modal-button"
                                         data-bs-dismiss="modal">Search</button>
+                                    <br>
                                     <br>
                                     <span class="modal-advanced-search-content">***</span>
                                     <br>
@@ -173,14 +174,14 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <button type="button" class="btn btn-dark advanced-search-modal-button"
+                                            <button type="button" class="btn btn-dark btn-sm advanced-search-modal-button"
                                                 id="search-recipe-by-ingredient-button"
                                                 data-bs-dismiss="modal">Search</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-dark btn-sm" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -215,23 +216,23 @@
                 <br>
                 <br>
                 <br>
-                <h1 class="recipes-continent-title-section" id="northAmericaRecipes">North America</h1>
+                <h2 class="recipes-continent-title-section" id="northAmericaRecipes">North America</h2>
                 <div class="icon-legend">
                     <img src="{% static 'recipes/img/flag-icon.png' %}" alt="flag-icon"
-                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
-                <span class="vertical-line">|</span>
-                <img src="{% static 'recipes/img/difficulty-icon.png' %}" alt="level-icon"
-                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
-                <span class="vertical-line">|</span>
-                <img src="{% static 'recipes/img/category-icon.png' %}" alt="category-icon"
-                    style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Country</span>
+                    <span class="vertical-line">|</span>
+                    <img src="{% static 'recipes/img/difficulty-icon.png' %}" alt="level-icon"
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Difficulty</span>
+                    <span class="vertical-line">|</span>
+                    <img src="{% static 'recipes/img/category-icon.png' %}" alt="category-icon"
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Category</span>
                 </div>
                 <div class="row">
                     <div class="col-2">
                     </div>
                     <div class="col-8 text-center">
                         <br>
-                        <button type="button" class="btn btn-dark"
+                        <button type="button" class="btn btn-dark btn-sm"
                             onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
                             recipe</button>
                         <br>
@@ -280,11 +281,11 @@
                             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10 d-flex justify-content-center">
                                 {% if object in request.user.favorites.all %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-danger recipes-list-page-add-to-favorite-button">Remove from
+                                    class="btn btn-danger btn-sm recipes-list-page-add-to-favorite-button">Remove from
                                     favorite</a>
                                 {% else %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-dark recipes-list-page-add-to-favorite-button">Add to favorite</a>
+                                    class="btn btn-dark btn-sm recipes-list-page-add-to-favorite-button">Add to favorite</a>
                                 {% endif %}
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1 col-1">
@@ -301,7 +302,7 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonNorthAmerica">
+                        <button type="button" class="btn btn-dark btn-sm w-75" id="showMoreButtonNorthAmerica">
                             Show More
                         </button>
                     </div>
@@ -312,8 +313,8 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonNorthAmerica"
-                            style="display: none;">
+                        <button type="button" class="btn btn-outline-danger btn-sm w-75" id="hideExtraCardButtonNorthAmerica"
+                            style="display: none; margin-bottom: 35px; margin-top: -45px;">
                             Show less
                         </button>
                     </div>
@@ -325,25 +326,23 @@
 
             <div class="default-content">
                 <br>
-                <br>
-                <br>
-                <h1 class="recipes-continent-title-section" id="centralAmericaRecipes">Central America</h1>
+                <h2 class="recipes-continent-title-section" id="centralAmericaRecipes">Central America</h2>
                 <div class="icon-legend">
                     <img src="{% static 'recipes/img/flag-icon.png' %}" alt="flag-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Country</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/difficulty-icon.png' %}" alt="level-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Difficulty</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/category-icon.png' %}" alt="category-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Category</span>
                 </div>
                 <div class="row">
                     <div class="col-2">
                     </div>
                     <div class="col-8 text-center">
                         <br>
-                        <button type="button" class="btn btn-dark"
+                        <button type="button" class="btn btn-dark btn-sm"
                             onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
                             recipe</button>
                         <br>
@@ -392,11 +391,11 @@
                             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10 d-flex justify-content-center">
                                 {% if object in request.user.favorites.all %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-danger recipes-list-page-add-to-favorite-button">Remove from
+                                    class="btn btn-danger btn-sm recipes-list-page-add-to-favorite-button">Remove from
                                     favorite</a>
                                 {% else %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-dark recipes-list-page-add-to-favorite-button">Add to favorite</a>
+                                    class="btn btn-dark btn-sm recipes-list-page-add-to-favorite-button">Add to favorite</a>
                                 {% endif %}
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1 col-1">
@@ -413,7 +412,7 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonCentralAmerica">
+                        <button type="button" class="btn btn-dark btn-sm w-75" id="showMoreButtonCentralAmerica">
                             Show More
                         </button>
                     </div>
@@ -424,9 +423,9 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonCentralAmerica"
-                            style="display: none;">
-                            Show less
+                        <button type="button" class="btn btn-outline-danger btm-sm w-75" id="hideExtraCardButtonCentralAmerica"
+                        style="display: none; margin-bottom: 35px; margin-top: -45px;">
+                        Show less
                         </button>
                     </div>
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
@@ -436,25 +435,23 @@
 
             <div class="default-content">
                 <br>
-                <br>
-                <br>
-                <h1 class="recipes-continent-title-section" id="southAmericaRecipes">South America</h1>
+                <h2 class="recipes-continent-title-section" id="southAmericaRecipes">South America</h2>
                 <div class="icon-legend">
                     <img src="{% static 'recipes/img/flag-icon.png' %}" alt="flag-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Country</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/difficulty-icon.png' %}" alt="level-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Difficulty</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/category-icon.png' %}" alt="category-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Category</span>
                 </div>
                 <div class="row">
                     <div class="col-2">
                     </div>
                     <div class="col-8 text-center">
                         <br>
-                        <button type="button" class="btn btn-dark"
+                        <button type="button" class="btn btn-dark btn-sm"
                             onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
                             recipe</button>
                         <br>
@@ -503,11 +500,11 @@
                             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10 d-flex justify-content-center">
                                 {% if object in request.user.favorites.all %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-danger recipes-list-page-add-to-favorite-button">Remove from
+                                    class="btn btn-danger btn-sm recipes-list-page-add-to-favorite-button">Remove from
                                     favorite</a>
                                 {% else %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-dark recipes-list-page-add-to-favorite-button">Add to favorite</a>
+                                    class="btn btn-dark btn-sm recipes-list-page-add-to-favorite-button">Add to favorite</a>
                                 {% endif %}
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1 col-1">
@@ -524,7 +521,7 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonSouthAmerica">
+                        <button type="button" class="btn btn-dark btn-sm w-75" id="showMoreButtonSouthAmerica">
                             Show More
                         </button>
                     </div>
@@ -535,9 +532,9 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonSouthAmerica"
-                            style="display: none;">
-                            Show less
+                        <button type="button" class="btn btn-outline-danger btn-sm w-75" id="hideExtraCardButtonSouthAmerica"
+                        style="display: none; margin-bottom: 35px; margin-top: -45px;">
+                        Show less
                         </button>
                     </div>
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
@@ -547,25 +544,23 @@
 
             <div class="default-content">
                 <br>
-                <br>
-                <br>
-                <h1 class="recipes-continent-title-section" id="europeRecipes">Europe</h1>
+                <h2 class="recipes-continent-title-section" id="europeRecipes">Europe</h2>
                 <div class="icon-legend">
                     <img src="{% static 'recipes/img/flag-icon.png' %}" alt="flag-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Country</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/difficulty-icon.png' %}" alt="level-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Difficulty</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/category-icon.png' %}" alt="category-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Category</span>
                 </div>
                 <div class="row">
                     <div class="col-2">
                     </div>
                     <div class="col-8 text-center">
                         <br>
-                        <button type="button" class="btn btn-dark"
+                        <button type="button" class="btn btn-dark btn-sm"
                             onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
                             recipe</button>
                         <br>
@@ -614,11 +609,11 @@
                             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10 d-flex justify-content-center">
                                 {% if object in request.user.favorites.all %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-danger recipes-list-page-add-to-favorite-button">Remove from
+                                    class="btn btn-danger btn-sm recipes-list-page-add-to-favorite-button">Remove from
                                     favorite</a>
                                 {% else %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-dark recipes-list-page-add-to-favorite-button">Add to favorite</a>
+                                    class="btn btn-dark btn-sm recipes-list-page-add-to-favorite-button">Add to favorite</a>
                                 {% endif %}
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1 col-1">
@@ -635,7 +630,7 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonEurope">
+                        <button type="button" class="btn btn-dark btn-sm w-75" id="showMoreButtonEurope">
                             Show More
                         </button>
                     </div>
@@ -646,9 +641,9 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonEurope"
-                            style="display: none;">
-                            Show less
+                        <button type="button" class="btn btn-outline-danger btn-sm w-75" id="hideExtraCardButtonEurope"
+                        style="display: none; margin-bottom: 35px; margin-top: -45px;">
+                        Show less
                         </button>
                     </div>
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
@@ -658,25 +653,23 @@
 
             <div class="default-content">
                 <br>
-                <br>
-                <br>
-                <h1 class="recipes-continent-title-section" id="africaRecipes">Africa</h1>
+                <h2 class="recipes-continent-title-section" id="africaRecipes">Africa</h2>
                 <div class="icon-legend">
                     <img src="{% static 'recipes/img/flag-icon.png' %}" alt="flag-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Country</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/difficulty-icon.png' %}" alt="level-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Difficulty</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/category-icon.png' %}" alt="category-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Category</span>
                 </div>
                 <div class="row">
                     <div class="col-2">
                     </div>
                     <div class="col-8 text-center">
                         <br>
-                        <button type="button" class="btn btn-dark"
+                        <button type="button" class="btn btn-dark btn-sm"
                             onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
                             recipe</button>
                         <br>
@@ -725,11 +718,11 @@
                             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10 d-flex justify-content-center">
                                 {% if object in request.user.favorites.all %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-danger recipes-list-page-add-to-favorite-button">Remove from
+                                    class="btn btn-danger btn-sm recipes-list-page-add-to-favorite-button">Remove from
                                     favorite</a>
                                 {% else %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-dark recipes-list-page-add-to-favorite-button">Add to favorite</a>
+                                    class="btn btn-dark btn-sm recipes-list-page-add-to-favorite-button">Add to favorite</a>
                                 {% endif %}
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1 col-1">
@@ -746,7 +739,7 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonAfrica">
+                        <button type="button" class="btn btn-dark btn-sm w-75" id="showMoreButtonAfrica">
                             Show More
                         </button>
                     </div>
@@ -757,9 +750,9 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonAfrica"
-                            style="display: none;">
-                            Show less
+                        <button type="button" class="btn btn-outline-danger btn-sm w-75" id="hideExtraCardButtonAfrica"
+                        style="display: none; margin-bottom: 35px; margin-top: -45px;">
+                        Show less
                         </button>
                     </div>
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
@@ -769,25 +762,23 @@
 
             <div class="default-content">
                 <br>
-                <br>
-                <br>
-                <h1 class="recipes-continent-title-section" id="asiaRecipes">Asia</h1>
+                <h2 class="recipes-continent-title-section" id="asiaRecipes">Asia</h2>
                 <div class="icon-legend">
                     <img src="{% static 'recipes/img/flag-icon.png' %}" alt="flag-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Country</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/difficulty-icon.png' %}" alt="level-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Difficulty</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/category-icon.png' %}" alt="category-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Category</span>
                 </div>
                 <div class="row">
                     <div class="col-2">
                     </div>
                     <div class="col-8 text-center">
                         <br>
-                        <button type="button" class="btn btn-dark"
+                        <button type="button" class="btn btn-dark btn-sm"
                             onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
                             recipe</button>
                         <br>
@@ -836,11 +827,11 @@
                             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10 d-flex justify-content-center">
                                 {% if object in request.user.favorites.all %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-danger recipes-list-page-add-to-favorite-button">Remove from
+                                    class="btn btn-danger btn-sm recipes-list-page-add-to-favorite-button">Remove from
                                     favorite</a>
                                 {% else %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-dark recipes-list-page-add-to-favorite-button">Add to favorite</a>
+                                    class="btn btn-dark btn-sm recipes-list-page-add-to-favorite-button">Add to favorite</a>
                                 {% endif %}
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1 col-1">
@@ -857,7 +848,7 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonAsia">
+                        <button type="button" class="btn btn-dark btn-sm w-75" id="showMoreButtonAsia">
                             Show More
                         </button>
                     </div>
@@ -868,9 +859,9 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonAsia"
-                            style="display: none;">
-                            Show less
+                        <button type="button" class="btn btn-outline-danger btn-sm w-75" id="hideExtraCardButtonAsia"
+                        style="display: none; margin-bottom: 35px; margin-top: -45px;">
+                        Show less
                         </button>
                     </div>
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
@@ -880,25 +871,23 @@
 
             <div class="default-content">
                 <br>
-                <br>
-                <br>
-                <h1 class="recipes-continent-title-section" id="oceaniaRecipes">Oceania</h1>
+                <h2 class="recipes-continent-title-section" id="oceaniaRecipes">Oceania</h2>
                 <div class="icon-legend">
                     <img src="{% static 'recipes/img/flag-icon.png' %}" alt="flag-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Country</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/difficulty-icon.png' %}" alt="level-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Difficulty</span>
                     <span class="vertical-line">|</span>
                     <img src="{% static 'recipes/img/category-icon.png' %}" alt="category-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
+                        style="width: 15px; height: 15px; margin-right: 5px;"><span>Category</span>
                 </div>
                 <div class="row">
                     <div class="col-2">
                     </div>
                     <div class="col-8 text-center">
                         <br>
-                        <button type="button" class="btn btn-dark"
+                        <button type="button" class="btn btn-dark btn-sm"
                             onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
                             recipe</button>
                         <br>
@@ -947,11 +936,11 @@
                             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10 d-flex justify-content-center">
                                 {% if object in request.user.favorites.all %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-danger recipes-list-page-add-to-favorite-button">Remove from
+                                    class="btn btn-danger btn-sm recipes-list-page-add-to-favorite-button">Remove from
                                     favorite</a>
                                 {% else %}
                                 <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-dark recipes-list-page-add-to-favorite-button">Add to favorite</a>
+                                    class="btn btn-dark btn-sm recipes-list-page-add-to-favorite-button">Add to favorite</a>
                                 {% endif %}
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1 col-1">
@@ -968,7 +957,7 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonOceania">
+                        <button type="button" class="btn btn-dark btn-sm w-75" id="showMoreButtonOceania">
                             Show More
                         </button>
                     </div>
@@ -979,120 +968,9 @@
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonOceania"
-                            style="display: none;">
-                            Show less
-                        </button>
-                    </div>
-                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
-                    </div>
-                </div>
-            </div>
-
-            <div class="default-content">
-                <br>
-                <br>
-                <br>
-                <h1 class="recipes-continent-title-section" id="otherRecipes">Mixed / No category</h1>
-                <div class="icon-legend">
-                    <img src="{% static 'recipes/img/flag-icon.png' %}" alt="flag-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Country</span>
-                    <span class="vertical-line">|</span>
-                    <img src="{% static 'recipes/img/difficulty-icon.png' %}" alt="level-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Difficulty</span>
-                    <span class="vertical-line">|</span>
-                    <img src="{% static 'recipes/img/category-icon.png' %}" alt="category-icon"
-                        style="width: 20px; height: 20px; margin-right: 5px;"><span>Category</span>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                    </div>
-                    <div class="col-8 text-center">
-                        <br>
-                        <button type="button" class="btn btn-dark"
-                            onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
-                            recipe</button>
-                        <br>
-                        <br>
-                        <a href="#topsection" class="back-to-top-link">Back to top</a>
-                    </div>
-                    <div class="col">
-                    </div>
-                </div>
-                <div class="row card-general-padding other-recipes">
-                    {% with other_country_list="no category, mixed" %}
-                    {% with other_counter=0 %}
-                    {% for object in object_list %}
-                    {% if object.origin_country in other_country_list and object.is_public %}
-                    {% with other_counter=other_counter|add:1 %}
-                    <div
-                        class="col-xl-4 col-lg-6 col-sm-12 card-general-padding other-recipes {% if other_counter > 6 %}other-recipes-hidden{% endif %}">
-                        <div class="card text-bg-dark">
-                            <a href="{{object.get_absolute_url_signed_users}}">
-                                <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
-                            </a>
-                            <div class="card-text">
-                                <div>
-                                    <a href="{{object.get_absolute_url_signed_users}}">
-                                        <h5 class="card-title-custom">{{ object.recipe_name }}</h5>
-                                    </a>
-                                </div>
-                                <div class="recipe-card-quick-info">
-                                    <img src="{% static 'recipes/img/flag-icon.png' %}" class="card-icons" alt="flag-icon"><span>{{ object.origin_country }}</span>
-                                </div>
-                                <br>
-                                <div class="recipe-card-quick-info">
-                                    <img src="{% static 'recipes/img/difficulty-icon.png' %}" class="card-icons"
-                                        alt="difficulty-icon"><span>{{ object.difficulty }}</span>
-                                </div>
-                                <br>
-                                <div class="recipe-card-quick-info">
-                                    <img src="{% static 'recipes/img/category-icon.png' %}" class="card-icons"
-                                        alt="category-icon"><span>{{ object.recipe_category }}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1 col-1">
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10 d-flex justify-content-center">
-                                {% if object in request.user.favorites.all %}
-                                <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-danger recipes-list-page-add-to-favorite-button">Remove from
-                                    favorite</a>
-                                {% else %}
-                                <a href="{% url 'accounts:favorite_add' object.id %}"
-                                    class="btn btn-dark recipes-list-page-add-to-favorite-button">Add to favorite</a>
-                                {% endif %}
-                            </div>
-                            <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1 col-1">
-                            </div>
-                        </div>
-                    </div>
-                    {% endwith %}
-                    {% endif %}
-                    {% endfor %}
-                    {% endwith %}
-                    {% endwith %}
-                </div>
-                <div class="row showMoreButtonRow">
-                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-dark w-75" id="showMoreButtonOther">
-                            Show More
-                        </button>
-                    </div>
-                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
-                    </div>
-                </div>
-                <div class="row hideExtraCardsButtonRow">
-                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-danger w-75" id="hideExtraCardButtonOther"
-                            style="display: none;">
-                            Show less
+                        <button type="button" class="btn btn-outline-danger btn-sm w-75" id="hideExtraCardButtonOceania"
+                        style="display: none; margin-bottom: 35px; margin-top: -45px;">
+                        Show less
                         </button>
                     </div>
                     <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1">
@@ -1126,17 +1004,17 @@
                     </div>
                     <div class="col-8 text-center">
                         <br>
-                        <h4 class="footer-text">Want to create your own recipes and share it with the world?
-                            Proud of one of your local recipe delight? <br><br></h4>
-                        <h4 class="footer-buttons-action-call footer-text">Submit your recipe to our catalog right now
+                        <h6 class="footer-text">Want to create your own recipes and share it with the world?
+                            Proud of one of your local recipe delight? <br><br></h6>
+                        <h6 class="footer-buttons-action-call footer-text">Submit your recipe to our catalog right now
                             quickly and
-                            easily.</h4><br><br>
+                            easily.</h6><br>
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-2">
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-8">
-                                    <button type="button" class="btn btn-dark w-100"
+                                    <button type="button" class="btn btn-dark btn-sm w-100"
                                         onclick="window.location.href='{% url 'recipes:user_submit_recipe' %}'">Submit
                                         recipe</button>
                                 </div>
@@ -1159,7 +1037,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 section-bottom-margin d-flex justify-content-center">
+                    <div class="col-12 d-flex justify-content-center">
                         <div class="a2a_kit a2a_kit_size_32 a2a_default_style website-share-icons">
                             <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
                             <a class="a2a_button_whatsapp"></a>
@@ -1172,6 +1050,8 @@
                         <script async src="https://static.addtoany.com/menu/page.js"></script>
                     </div>
                 </div>
+                <br>
+                <br>
 
                 <div class="row">
                     <div class="col-12 text-center">
