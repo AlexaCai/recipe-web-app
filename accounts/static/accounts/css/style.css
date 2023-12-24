@@ -201,7 +201,13 @@
     display: flex;
     align-items: center;
     justify-content: center; 
-    height: 90vh; 
+    height: 80vh; 
+}
+
+@media (max-width: 500px) {
+    .logout-page-action-boxes {
+        height: unset;
+    }
 }
 
 .logout-page-action-box-1 {
