@@ -149,8 +149,26 @@
     padding-bottom: 10px;
 }
 
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+
 .modal-text-home-page {
     font-size: 15px;
+}
+
+.download-app-desktop-icon {
+    height: 90px;
+    width: 90px;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 450px) {
+    .download-app-desktop-icon {
+        height: 80px;
+        width: 70px;
+    }
 }
 
 .download-app-icon {
@@ -166,6 +184,11 @@
     }
 }
 
+.install-mobile-icon {
+    height: 110px;
+    width: 260px;
+    padding-bottom: 10px;
+}
 
 
 /* CSS for the recipes list page (unsigned and signed versions) */
