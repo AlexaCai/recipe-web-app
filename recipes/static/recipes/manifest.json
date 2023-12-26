@@ -3,12 +3,6 @@
     "name": "Cuisine Atlas",
     "icons": [
       {
-        "src": "/static/recipes/img/favicon.ico",
-        "type": "image/x-icon",
-        "sizes": "48x48",
-        "purpose": "maskable"
-      },
-      {
         "src": "/static/recipes/img/website-logo-144.png",
         "type": "image/png",
         "sizes": "144x144",
