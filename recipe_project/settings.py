@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml49cp(e)=yakpe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'fast-tundra-58005-dd30a2d2fa87.herokuapp.com', 'a-tablespoon-of-discovery-52a5bb04d981.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'fast-tundra-58005-dd30a2d2fa87.herokuapp.com', 'a-tablespoon-of-discovery-52a5bb04d981.herokuapp.com']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
