@@ -54,7 +54,8 @@
                 <div class="col-xl-1 d-none d-lg-block">
                 </div>
                 <div class="col-xl-6 col-lg-10 col-md-10 col-sm-10 col-10">
-                    <img src="{{ object.pic.url }}" class="img-fluid detailed-page-image" alt="recipe-image" />
+                    <!-- Change the link below to src={{ object.pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                    <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid detailed-page-image" alt="recipe-image" />
                 </div>
                 <div class="col-xl-4 col-lg-10 col-md-10 col-sm-10 col-10">
                     <div class="row text-center">
@@ -261,7 +262,8 @@
                                     <div class="fw-bold detailed-page-text-content text-center">{{ tool.cooking_tool_name }}</div>
                                     <br>
                                     <br>
-                                    <img src="{{ tool.cooking_tool_pic.url }}" class="img-fluid" alt="recipe-image" />
+                                    <!-- Change the link below to src={{ tool.cooking_tool_pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                                    <img src="{% static 'recipes/img/no-cooking-tool-default-image.jpg' %}" class="img-fluid" alt="recipe-image" />
                                 </div>
                             </li>
                         </ol>
@@ -289,12 +291,12 @@
                         <div class="card text-bg-dark">
                             {% if '/recipes-detail-unsigned-users/' in request.path %}
                             <a href="{{recipe.complementary_recipe_link_unsigned_users}}">
-                                <img src="{{ recipe.similar_recipe_pic.url }}" class="img-fluid" alt="recipe-image">
-                            </a>   
+                                <!-- Change the link below to src={{ recipe.similar_recipe_pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                                <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">                            </a>   
                             {% elif '/recipes-detail-signed-users/' in request.path %}
                             <a href="{{recipe.complementary_recipe_link_signed_users}}">
-                                <img src="{{ recipe.similar_recipe_pic.url }}" class="img-fluid" alt="recipe-image">
-                            </a>  
+                                <!-- Change the link below to src={{ recipe.similar_recipe_pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                                <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">                            </a>  
                             {% endif %}
                             <div class="card-text-similar-recipe d-flex justify-content-center">
                                 <div class="title-container">
