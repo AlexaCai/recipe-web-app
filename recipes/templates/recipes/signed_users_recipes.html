@@ -252,8 +252,9 @@
                         class="col-xl-4 col-lg-6 col-sm-12 card-general-padding north-america-recipes {% if counter > 6 %}north-america-recipes-hidden{% endif %}">
                         <div class="card text-bg-dark">
                             <a href="{{object.get_absolute_url_signed_users}}">
-                                <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
-                            </a>
+                                <!-- Change the link below to src={{ object.pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                                <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">    
+                                </a>
                             <div class="card-text">
                                 <div>
                                     <a href="{{object.get_absolute_url_signed_users}}">
@@ -362,7 +363,8 @@
                         class="col-xl-4 col-lg-6 col-sm-12 card-general-padding central-america-recipes {% if central_america_counter > 6 %}central-america-recipes-hidden{% endif %}">
                         <div class="card text-bg-dark">
                             <a href="{{object.get_absolute_url_signed_users}}">
-                                <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
+                                <!-- Change the link below to src={{ object.pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                                <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">                                
                             </a>
                             <div class="card-text">
                                 <div>
@@ -471,7 +473,8 @@
                         class="col-xl-4 col-lg-6 col-sm-12 card-general-padding south-america-recipes {% if south_america_counter > 6 %}south-america-recipes-hidden{% endif %}">
                         <div class="card text-bg-dark">
                             <a href="{{object.get_absolute_url_signed_users}}">
-                                <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
+                                <!-- Change the link below to src={{ object.pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                                <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">                                
                             </a>
                             <div class="card-text">
                                 <div>
@@ -580,7 +583,8 @@
                         class="col-xl-4 col-lg-6 col-sm-12 card-general-padding europe-recipes {% if south_america_counter > 6 %}europe-recipes-hidden{% endif %}">
                         <div class="card text-bg-dark">
                             <a href="{{object.get_absolute_url_signed_users}}">
-                                <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
+                                <!-- Change the link below to src={{ object.pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                                <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">                                
                             </a>
                             <div class="card-text">
                                 <div>
@@ -689,7 +693,8 @@
                         class="col-xl-4 col-lg-6 col-sm-12 card-general-padding africa-recipes {% if africa_counter > 6 %}africa-recipes-hidden{% endif %}">
                         <div class="card text-bg-dark">
                             <a href="{{object.get_absolute_url_signed_users}}">
-                                <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
+                                <!-- Change the link below to src={{ object.pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                                <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">                                
                             </a>
                             <div class="card-text">
                                 <div>
@@ -798,7 +803,8 @@
                         class="col-xl-4 col-lg-6 col-sm-12 card-general-padding asia-recipes {% if asia_counter > 6 %}asia-recipes-hidden{% endif %}">
                         <div class="card text-bg-dark">
                             <a href="{{object.get_absolute_url_signed_users}}">
-                                <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
+                                <!-- Change the link below to src={{ object.pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                                <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">                                
                             </a>
                             <div class="card-text">
                                 <div>
@@ -907,7 +913,8 @@
                         class="col-xl-4 col-lg-6 col-sm-12 card-general-padding oceania-recipes {% if oceania_counter > 6 %}oceania-recipes-hidden{% endif %}">
                         <div class="card text-bg-dark">
                             <a href="{{object.get_absolute_url_signed_users}}">
-                                <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
+                                <!-- Change the link below to src={{ object.pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                                <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">                                
                             </a>
                             <div class="card-text">
                                 <div>

@@ -310,7 +310,8 @@
                     class="col-xl-4 col-lg-6 col-sm-12 recipe-card-padding created-recipe-card {% if forloop.counter > 6 %}created-recipe-card-hidden{% endif %}">
                     <div class="card text-bg-dark">
                         <a href="{{object.get_absolute_url_signed_users}}">
-                            <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
+                            <!-- Change the link below to src={{ object.pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                            <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">                        
                         </a>
                         <div class="card-text">
                             <div>
@@ -440,7 +441,8 @@
                     class="col-xl-4 col-lg-6 col-sm-12 recipe-card-padding favorite-recipe-card {% if forloop.counter > 6 %}favorite-recipe-card-hidden{% endif %}">
                     <div class="card text-bg-dark">
                         <a href="{{object.get_absolute_url_signed_users}}">
-                            <img src="{{ object.pic.url }}" class="img-fluid" alt="recipe-image">
+                            <!-- Change the link below to src={{ object.pic.url }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering of users uploaded images -->
+                            <img src="{% static 'recipes/img/no-recipe-default-image.jpg' %}" class="img-fluid" alt="recipe-image">                        
                         </a>
                         <div class="card-text">
                             <div>
