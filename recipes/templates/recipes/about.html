@@ -44,7 +44,7 @@
                             <a class="nav-link" href="{% url 'recipes:recipes_list_unsigned_users' %}">
                                 Recipes
                             </a>
-                            {% endif %}                        
+                            {% endif %}
                         </li>
                         <li class="nav-item">
                             {% if user.is_authenticated %}
@@ -65,13 +65,42 @@
     </header>
 
     <body>
-        <div class="image-background-recipe-submit-failed-page">
+        <div class="image-background-about-page">
             <div class="row welcome-boxes">
-                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-10">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-10">
                     <div class="welcome-box-1">
                         <h1 class="website-title">A tablespoon of discovery</h1>
                         <br>
+                        <h2 class="website-subtitle">Our mission</h2>
+                        <p>To take people on a traveling journey one meal at a time, by offering a variety of accessible
+                            traditional recipes from all around the world.</p>
                         <br>
+                        <h2 class="website-subtitle">Our goal</h2>
+                        <p>We've designed our website specifically to open the world's gastronomic doors to food lovers. Our aim is to display as many recipes as possible from all corners of
+                            the globe, so that you can discover new flavors, new cuisines and simply immerse yourself in
+                            new cultures! Whether you're looking for an original quick meal for an evening with
+                            friends, a top-of-the-range meal for a romantic dinner or a simple family meal on a
+                            weekday, our cuisine atlas have the right recipes for you.</p>
+                        <br>
+                        <h2 class="website-subtitle">What sets us apart</h2>
+                        <p>We know that cooking international dishes can sometimes be a challenge. That's why we offer
+                            clear and simple cooking instructions for each recipe, as well as several substitutes for the
+                            original ingredients that may not be available in your area. With our Cuisine Atlas, cooking a
+                            delicious Indian, Brazilian or Greek recipe from home, with or without all the original ingredients, is
+                            possible. Our website also offer advanced search options, so you can find the type of cuisine you want very
+                            quickly.</p>
+                        <br>
+                        <h2 class="website-subtitle">Contribute!</h2>
+                        <p>Want to contribute? If you'd like to share one of your great recipes with the world, <a
+                                href="{% url 'recipes:user_submit_recipe' %}" target="_blank">share it with us here</a>.
+                            We'll receive your recipe, and if it seems complete after review, we'll gladly publish it.
+                        </p>
+                        <br>
+                        <h2 class="website-subtitle">Contact</h2>
+                        <p>If you have any questions or suggestions, you can contact us at the following adress: <br>
+                            <a href="mailto:atablespoonofdiscovery@gmail.com" class="email-line-wrap">atablespoonofdiscovery@gmail.com
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
