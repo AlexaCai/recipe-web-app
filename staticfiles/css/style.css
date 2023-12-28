@@ -78,7 +78,7 @@
 .welcome-box-1 {
     text-align: center;
     padding: 20px;
-    background-color: rgb(255, 255, 255, 0.90);
+    background-color: rgb(255, 255, 255, 0.93);
     border-radius: 10px;
     margin-top: 40px;
 }
@@ -521,7 +521,7 @@
 }
 
 .recipe-icon-text {
-    font-size: 15px;
+    font-size: 14px;
     background: rgba(255, 255, 255, 0.99);
     padding: 10px;
     margin: 5px 0;
@@ -540,8 +540,8 @@
 }
 
 .detailed-page-icon {
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
     margin-right: 5px;
 }
 
@@ -1077,7 +1077,35 @@
 /* CSS for the about page */
 
 .image-background-about-page {
-    background: url("../../recipes/img/lemon-background.jpg") center/cover no-repeat;
-    height: 120vh;
+    background: url("../../recipes/img/pepper-background.jpg") center/cover no-repeat;
+    height: 162vh;
     margin: 0;
+}
+
+@media (max-width: 900px) {
+    .image-background-about-page {
+        height: 180vh;
+    }
+}
+
+@media (max-width: 430px) {
+    .image-background-about-page {
+        height: 200vh;
+    }
+}
+
+@media (max-width: 415px) {
+    .image-background-about-page {
+        height: 250vh;
+    }
+}
+
+@media (max-width: 359px) {
+    .image-background-about-page {
+        height: 370vh;
+    }
+}
+
+.email-line-wrap {
+    word-wrap: break-word;
 }
