@@ -236,7 +236,6 @@ function displaySearchResults(data) {
             recipeCard.innerHTML = `
             <div class="card text-bg-dark">
                 <a href="${recipeUrl}">
-                <!-- Change the current link below <img src={{ ... }} when want to use media files and real pictures for each recipe (instead of static file) for dynamic rendering. See the same Django project local version (recipe-app-Django), same JavaScript file, for the right code -->
                     <img src="/static/recipes/img/no-recipe-default-image.jpg" class="img-fluid" alt="recipe-image">
                 </a>                                
                 <div class="card-text">
