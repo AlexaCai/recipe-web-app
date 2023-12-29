@@ -256,6 +256,12 @@ def search_recipes_by_ingredients(request):
             recipe_ingredients__ingredient_name__icontains=ingredient
         )
 
+    # distinct() method is used to remove duplicates recipes if one recipe contains more than one \
+    # of the same ingredient in his list (e.g.: a recipe contains both 'granulated sugar' and \
+    # 'powdered sugar' in its ingredients list, and the user searches for 'sugar'). With dinstinct() \
+    # the recipe will only appear once in the search results instead of twice.
+    matching_recipes = matching_recipes.distinct()
+
     recipes_json = [
         {
             "recipe_name": recipe.recipe_name,
