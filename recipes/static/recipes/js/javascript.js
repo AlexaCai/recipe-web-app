@@ -154,7 +154,7 @@ function displaySearchResults(data) {
         mainSearchNotFound.innerHTML = `
             <br>
             <br>
-            <h1 class="recipes-continent-title-section">Recipe(s) not found</h1> 
+            <h2 class="recipes-continent-title-section">Recipe(s) not found</h2> 
             <br>
             <br>
             <div class="search-result-not-found">
@@ -176,7 +176,7 @@ function displaySearchResults(data) {
                 <span>***</span>
                 <br>
                 <br>
-                <button type="button" class="btn btn-danger" onclick="clearSearch()">Clear search</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="clearSearch()">Clear search</button>
             </div>
             `;
 

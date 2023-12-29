@@ -279,25 +279,7 @@
 
 .search-result-not-found {
     text-align: center;
-    font-size: 25px;
-}
-
-@media (max-width: 700px) {
-    .search-result-not-found {
-        font-size: 23px;
-    }
-}
-
-@media (max-width: 450px) {
-    .search-result-not-found {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 280px) {
-    .search-result-not-found {
-        font-size: 18px;
-    }
+    font-size: 17px;
 }
 
 .submit-title {
