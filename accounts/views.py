@@ -56,7 +56,12 @@ def logout_view(request):
 
 
 def delete_account(request):
+    if not request.user.is_authenticated:
+    # Redirect to the home page if user try to go back on the delete account page after moving from it
+        return redirect('recipes:home')
+
     user = request.user
+    logout(request)
     user.delete()
     return render(request, 'accounts/account-deleted.html')
 
