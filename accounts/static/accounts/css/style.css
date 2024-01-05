@@ -377,10 +377,9 @@
     font-weight: bold;
     font-size: 18px;
     background-color: rgb(255, 255, 255, 0.97);
-    padding: 10px 30px;
+    padding: 5px;
     color: black;
     border: solid 1px black;
-    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -396,9 +395,8 @@
 
 .recipe-card-quick-info {
     background: rgba(255, 255, 255, 0.97);
-    padding: 8px;
+    padding: 5px;
     margin: 5px 0;
-    border-radius: 10px;
     display: inline-block;
     margin-bottom: unset;
     border: solid 1px black;
