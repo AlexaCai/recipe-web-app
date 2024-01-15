@@ -258,8 +258,14 @@
 
 .profile-page-image-background {
     background: url("../../accounts/img/profile-page-background.jpg") center/cover no-repeat;
-    padding: 40px 0;
-    height: 145vh;
+    padding: 20px 0;
+    height: 78vh;
+}
+
+@media (max-width: 340px) {
+    .profile-page-image-background {
+        height: 88vh;
+    }
 }
 
 @media (max-width: 325px) {
@@ -268,6 +274,11 @@
     }
 }
 
+@media (max-width: 319px) {
+    .profile-page-image-background {
+        height: 95vh;
+    }
+}
 .intro-text {
     font-family: 'Lobster', sans-serif;
     background-color: rgba(255, 255, 255, 0.95);

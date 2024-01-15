@@ -258,13 +258,25 @@
 
 .profile-page-image-background {
     background: url("../../accounts/img/profile-page-background.jpg") center/cover no-repeat;
-    padding: 40px 0;
-    height: 145vh;
+    padding: 20px 0;
+    height: 78vh;
+}
+
+@media (max-width: 340px) {
+    .profile-page-image-background {
+        height: 88vh;
+    }
 }
 
 @media (max-width: 325px) {
     .profile-page-image-background {
         padding-top: 40px;
+    }
+}
+
+@media (max-width: 319px) {
+    .profile-page-image-background {
+        height: 95vh;
     }
 }
 
