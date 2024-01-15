@@ -33,7 +33,11 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
+                            {% if user.is_authenticated %}
+                            <!-- Show nothing when user is logged in -->
+                            {% else %}
                             <a class="nav-link" href="{% url 'recipes:home' %}">Home</a>
+                            {% endif %}
                         </li>
                         <li class="nav-item">
                             {% if user.is_authenticated %}

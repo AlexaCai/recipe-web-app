@@ -31,9 +31,6 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'recipes:home' %}">Home</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'accounts:profile' %}">Profile</a>
                         </li>
@@ -59,10 +56,10 @@
                     </h2>
                 </div>
                 <div class="intro-section-search-box">
-                    <h3 class="search-title">
+                    <h3 class="search-title" style="margin: unset;">
                         Search recipes
                     </h3>
-                    <br>
+                    <p><b>(Scroll down to see results after search)</b></p>
                     <form class="row justify-content-center" role="search">
                         <div class="col-md-10">
                             <div class="input-group">
@@ -79,7 +76,6 @@
                         data-bs-target="#advancedSearchModal">
                         Advanced search
                     </button>
-                    <br>
                     <br>
                     <br>
                     <h3 class="search-title">
