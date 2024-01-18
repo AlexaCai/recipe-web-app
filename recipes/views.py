@@ -4,11 +4,10 @@ from .models import Recipe, RecipeComments, RecipeIngredients, RecipeAllergens, 
 from django.http import JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from .forms import SearchAllergensForm, UserSubmitRecipe, RecipeIngredientsForm, RecipeAllergensForm, RecipeCookingInstructionsForm, RecipeToolsForm, RecipeSimilarComplementaryForm
+from .forms import UserSubmitRecipe, RecipeIngredientsForm, RecipeAllergensForm, RecipeCookingInstructionsForm, RecipeToolsForm, RecipeSimilarComplementaryForm
 from django.forms import inlineformset_factory
 import pandas as pd
 from django.db.models import Q
-from .utils import get_chart
 from django.utils import timezone
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage

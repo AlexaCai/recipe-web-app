@@ -2,23 +2,6 @@ from django import forms
 from recipes.models import Recipe, RecipeIngredients, RecipeAllergens, RecipeCookingInstructions, RecipeToolsNeeded, RecipeSimilarComplementary
 from django.forms import inlineformset_factory
 
-
-CHART__CHOICES = (         
-   ('#1', 'Bar chart'),    
-   ('#2', 'Pie chart'),
-   ('#3', 'Line chart')
-   )
-
-#define class-based Form imported from Django forms
-class SearchAllergensForm(forms.Form): 
-   allergens = forms.CharField(        
-        label="Allergen(s)",
-        max_length=120,
-        required=False
-        )
-   
-   chart_type = forms.ChoiceField(choices=CHART__CHOICES)
-
 unit_measure_choices = (
     ("ml - milliliter", "ml - Milliliter"),
     ("fl oz - fluid ounce", "fl oz - Fluid Ounce"),

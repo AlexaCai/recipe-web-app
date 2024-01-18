@@ -7,8 +7,6 @@ from .models import (
     RecipeSimilarComplementary,
 )
 
-from .forms import SearchAllergensForm
-
 class RecipeModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -237,29 +235,3 @@ class RecipeModelTest(TestCase):
         similar_recipe = RecipeSimilarComplementary.objects.get(id=1)
         max_length = similar_recipe._meta.get_field('complementary_recipe_name').max_length
         self.assertEqual(max_length, 100)
-
-class SearchAllergensFormTest(TestCase):
-    @classmethod
-    def setUpTestData(cls):
-        cls.form_data = {
-            'allergens': 'cheese',
-            'chart_type': '#1',
-        }
-
-    def setUp(self):
-        # Create an initially empty form
-        empty_form_data = {
-            'allergens': '',
-            'chart_type': '',
-        }
-        self.empty_form = SearchAllergensForm(data=empty_form_data)
-
-    def test_search(self):
-        self.empty_form.data = self.form_data
-        self.assertTrue(self.empty_form.is_valid())
-
-    def test_search_max_length(self):
-        form=SearchAllergensForm()
-        allergens_field = form.fields['allergens']
-        max_length = allergens_field.max_length
-        self.assertEqual(max_length, 120)
