@@ -185,29 +185,6 @@
                 </div>
             </div>
 
-            <div class="text-center">
-                <br>
-                <br>
-                <h4>Search by allergens</h4>
-                <p>Enter allergen(s) to eliminate/remove recipes based on that critera.</p>
-                <p>All recipes returned <b>will not</b> contains this/these allergens.</p>
-                <p>If you want to enter more than one allergen, separeted each one with a comma.</p>
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    {{form}}
-                    <button type="submit">search</button>
-                </form>
-                <br>
-                {% if recipes_df %}
-                {{recipes_df|safe}}
-                <br>
-                <img src="data:image/png;base64, {{chart|safe}}">
-                {% else %}
-                <h3> no data</h3>
-                {% endif %}
-            </div>
-
-
             <div class="default-content">
                 <br>
                 <br>
