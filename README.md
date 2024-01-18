@@ -44,7 +44,9 @@ This Recipe web app is built with Django version 4.2.6, Python version 3.8.7 and
 
 During development, an SQLite database is used. However, since this default SQLite database can’t be used on Heroku (as it’s file based and will be deleted every time the application restarts or if any variables change), the database/service heroku-postgresql is used for production.
 
-The frontend of the web app is built with HTML, Bootstrap, CSS and JavaScript.
+Also, even if not part of the final product, QuerySet API, DataFrames (pandas) and plotting libraries (matplotlib - a comprehensive library for creating static, animated, and interactive visualizations in Python) have been tried out during the development of this web app.
+
+The frontend is built with HTML, Bootstrap, CSS and JavaScript.
 
 ## App dependencies
 
